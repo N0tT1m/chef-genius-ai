@@ -1,0 +1,74 @@
+[package]
+name = "chef-genius-api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Web Framework
+axum = "0.7"
+tokio = { version = "1.0", features = ["full"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# TensorRT Integration
+tensorrt = "0.1"
+cuda-runtime-sys = "0.3.0-alpha.1"
+
+# ML/Tensor Operations
+candle-core = "0.6"
+candle-nn = "0.6"
+candle-transformers = "0.6"
+candle-onnx = "0.6"
+
+# Database & Caching
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres", "uuid", "chrono"] }
+redis = { version = "0.25", features = ["tokio-comp"] }
+
+# Monitoring & Observability
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+prometheus = "0.13"
+metrics = "0.23"
+metrics-exporter-prometheus = "0.15"
+
+# Utilities
+uuid = { version = "1.0", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+anyhow = "1.0"
+thiserror = "1.0"
+config = "0.14"
+clap = { version = "4.0", features = ["derive"] }
+
+# Async & Concurrency
+rayon = "1.8"  # Parallel processing
+dashmap = "5.5"  # Concurrent HashMap
+
+# WebSocket Support
+axum-tungstenite = "0.1"
+futures-util = "0.3"
+
+# System Monitoring
+sysinfo = "0.30"
+regex = "1.10"
+
+# Additional utilities
+num_cpus = "1.16"
+url = "2.5"
+libc = "0.2"
+
+# HTTP Client (for external services like Discord)
+reqwest = { version = "0.12", features = ["json"] }
+
+# Security
+jsonwebtoken = "9.0"
+bcrypt = "0.15"
+
+[dev-dependencies]
+tokio-test = "0.4"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"

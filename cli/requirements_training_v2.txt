@@ -1,0 +1,36 @@
+# Enhanced Training Requirements (V2 with all 10 improvements)
+
+# Core ML libraries
+torch>=2.0.0
+transformers==4.52.0
+datasets==3.2.0
+accelerate==0.24.0
+
+# LoRA and efficient fine-tuning (Improvement #5)
+peft>=0.7.0
+
+# Monitoring and logging
+wandb
+tensorboard
+
+# Metrics and evaluation (Improvement #1, #8)
+rouge-score
+nltk
+scikit-learn
+
+# Data processing
+pandas
+numpy
+
+# System monitoring
+psutil
+GPUtil
+
+# Utilities
+requests
+tqdm
+
+# Training optimizations
+ninja  # For Flash Attention compilation
+packaging
+wheel

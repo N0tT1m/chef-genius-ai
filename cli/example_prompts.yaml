@@ -1,0 +1,60 @@
+# Example Prompts File for Recipe Generator
+# This demonstrates the pluggable prompt system
+
+prompts:
+  # Traditional pork belly recipes
+  - name: "Classic Crispy Pork Belly"
+    prompt: "Create a traditional crispy pork belly recipe with perfectly rendered fat and crackling skin. Include proper scoring techniques and oven temperature control."
+    category: "traditional"
+    difficulty: "normal"
+    expected_features:
+      - "scoring"
+      - "skin"
+      - "crackling"
+      - "rendering"
+      - "temperature"
+      - "crispy"
+
+  - name: "Chinese Red-Braised Pork Belly"
+    prompt: "Design an authentic Chinese red-braised pork belly recipe with soy sauce, rock sugar, and Shaoxing wine. Include traditional technique for achieving tender, glossy meat."
+    category: "traditional"
+    difficulty: "normal"
+    expected_features:
+      - "soy sauce"
+      - "rock sugar"
+      - "Shaoxing wine"
+      - "braising"
+      - "tender"
+      - "glossy"
+
+  # Fusion recipes
+  - name: "Korean-Mexican Pork Belly Tacos"
+    prompt: "Design fusion pork belly tacos combining Korean gochujang flavors with Mexican tortilla techniques, including kimchi slaw and sesame-lime crema."
+    category: "fusion"
+    difficulty: "challenging"
+    expected_features:
+      - "Korean"
+      - "Mexican"
+      - "gochujang"
+      - "tacos"
+      - "kimchi"
+      - "sesame-lime"
+
+  # Creative techniques
+  - name: "Sous Vide Pork Belly"
+    prompt: "Design a modern sous vide pork belly recipe with precise time and temperature, followed by torching technique for perfect texture contrast."
+    category: "creative"
+    difficulty: "extreme"
+    expected_features:
+      - "sous vide"
+      - "precise temperature"
+      - "torching"
+      - "texture contrast"
+      - "modern"
+      - "technique"
+
+# Usage:
+# python improved_pork_belly_generator.py --prompts-file example_prompts.yaml --checkpoint ./checkpoint
+
+# To save prompts from code:
+# python improved_pork_belly_generator.py --save-prompts my_prompts.yaml --checkpoint ./checkpoint

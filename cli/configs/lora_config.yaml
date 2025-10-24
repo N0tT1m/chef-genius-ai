@@ -1,0 +1,94 @@
+# LoRA Training Configuration
+# Efficient fine-tuning for large models (11B+) with reduced memory
+
+experiment_name: "flan-t5-xxl-lora"
+description: "LoRA fine-tuning for FLAN-T5-XXL (11B parameters)"
+tags:
+  - "recipe-generation"
+  - "flan-t5-xxl"
+  - "lora"
+  - "efficient"
+
+# Model settings
+model_name: "google/flan-t5-xxl"  # 11B parameters
+output_dir: "./models/flan-t5-xxl-lora"
+resume_from_checkpoint: null
+
+# Hardware (optimized for RTX 5090 32GB)
+hardware:
+  cpu_cores: 12
+  cpu_threads: 24
+  gpu_vram_gb: 32.0
+  system_ram_gb: 48
+
+# Data configuration
+data:
+  validated_data_dir: "./cli/validated_datasets"
+  min_quality_score: 0.7  # Higher quality for large model
+  max_input_length: 256
+  max_target_length: 512
+  train_split: 0.9
+  shuffle: true
+  num_workers: 4
+  use_rust_loader: true
+
+# Optimization (conservative for XXL)
+optimization:
+  optimizer_type: "adamw"
+  learning_rate: 0.0001  # Lower LR for large model
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  warmup_steps: 1000
+  scheduler_type: "linear"
+  betas: [0.9, 0.999]
+  eps: 1.0e-08
+
+# Training (LoRA enabled)
+training:
+  num_epochs: 3
+  batch_size: 16  # Smaller batch for XXL
+  gradient_accumulation_steps: 4  # Effective batch = 64
+  use_bf16: true
+  use_fp16: false
+  gradient_checkpointing: true
+  use_flash_attention: true
+  use_torch_compile: false  # Disabled with LoRA
+  disable_cudagraphs: true
+  checkpoint_every_n_steps: 500
+  keep_best_n_checkpoints: 3
+  early_stopping_patience: 3
+  early_stopping_threshold: 0.0001
+
+  # LoRA enabled for efficient training
+  use_lora: true
+  lora_r: 16  # Rank
+  lora_alpha: 32  # 2x rank
+  lora_dropout: 0.05
+  lora_target_modules: ["q", "v"]
+
+# Monitoring
+monitoring:
+  use_wandb: true
+  wandb_project: "chef-genius-xxl-lora"
+  wandb_entity: null
+  discord_webhook: null
+  alert_phone: null
+  log_every_n_steps: 25
+  eval_every_n_steps: 500
+  generate_samples_every_n_steps: 500
+  monitor_system_metrics: true
+  monitor_data_pipeline: true
+
+# Evaluation
+evaluation:
+  compute_bleu: true
+  compute_rouge: true
+  compute_perplexity: true
+  compute_ingredient_coherence: true
+  compute_instruction_quality: true
+  validation_prompts:
+    - "Create a gourmet French dish with duck and cherries."
+    - "Make a complex multi-course Italian dinner."
+    - "Design an elaborate dessert with chocolate and raspberry."
+    - "Prepare an authentic Thai curry from scratch."
+    - "Bake artisan sourdough bread with detailed instructions."

@@ -1,0 +1,33 @@
+# Core MCP dependencies
+mcp>=0.1.0
+asyncio>=3.4.3
+httpx>=0.24.0
+uvloop>=0.17.0
+
+# AI/ML dependencies
+torch>=2.0.0
+transformers>=4.30.0
+sentence-transformers>=2.2.2
+numpy>=1.21.0
+scikit-learn>=1.0.0
+
+# Vector database
+weaviate-client>=3.22.0
+
+# Network graph
+networkx>=3.0
+
+# Data processing
+pandas>=1.5.0
+Pillow>=9.0.0
+
+# Web framework
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+
+# Monitoring
+prometheus-client>=0.16.0
+
+# Logging
+structlog>=23.0.0

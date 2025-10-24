@@ -1,0 +1,77 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.training
+!.env.example
+!.env.training.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node.js / Frontend
+node_modules/
+.next/
+.nuxt/
+dist/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Data & Models
+data/
+models/
+cli/recipe_nlg/
+cli/rust_dataloader/target
+cli/csv_to_database/target/
+cli/csv_to_database/datasets/
+
+# Generated training data - too large for git
+cli/validated_datasets/
+cli/*.jsonl
+cli/flan_t5_*.jsonl
+cli/validated_*.jsonl
+
+# Also ignore if generated in root (Docker context)
+validated_datasets/
+*.jsonl
+flan_t5_*.jsonl
+validated_*.jsonl
+
+# Rust build artifacts (very large)
+chef_genius_core/target/
+cli/recipe_data_validator/target/
+target/
+Cargo.lock
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp

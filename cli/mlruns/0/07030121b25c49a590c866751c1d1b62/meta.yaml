@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/timmy/workspace/ai-apps/chef-genius/cli/mlruns/0/07030121b25c49a590c866751c1d1b62/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 07030121b25c49a590c866751c1d1b62
+run_name: ../models/recipe_generation
+run_uuid: 07030121b25c49a590c866751c1d1b62
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749258356087
+status: 1
+tags: []
+user_id: timmy

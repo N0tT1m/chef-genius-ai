@@ -1,0 +1,94 @@
+# Default Training Configuration
+# Complete configuration for FLAN-T5 recipe generation fine-tuning
+
+# Experiment metadata
+experiment_name: "flan-t5-recipe-default"
+description: "Default configuration for recipe generation training"
+tags:
+  - "recipe-generation"
+  - "flan-t5"
+  - "default"
+
+# Model settings
+model_name: "google/flan-t5-large"
+output_dir: "./models/flan-t5-recipe-default"
+resume_from_checkpoint: null
+
+# Hardware configuration (auto-detected by default)
+hardware:
+  cpu_cores: 12
+  cpu_threads: 24
+  gpu_vram_gb: 24.0  # Will be auto-detected
+  system_ram_gb: 48
+
+# Data configuration
+data:
+  validated_data_dir: "./cli/validated_datasets"
+  min_quality_score: 0.6
+  max_input_length: 256
+  max_target_length: 512
+  train_split: 0.9  # 90% train, 10% validation
+  shuffle: true
+  num_workers: 4
+  use_rust_loader: true
+
+# Optimization settings
+optimization:
+  optimizer_type: "adamw"
+  learning_rate: 0.0005  # 5e-4
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  warmup_steps: 1000
+  scheduler_type: "linear"
+  betas: [0.9, 0.999]
+  eps: 1.0e-08
+
+# Training configuration
+training:
+  num_epochs: 3
+  batch_size: 32
+  gradient_accumulation_steps: 1
+  use_bf16: true
+  use_fp16: false
+  gradient_checkpointing: true
+  use_flash_attention: true
+  use_torch_compile: true
+  disable_cudagraphs: true
+  checkpoint_every_n_steps: 1000
+  keep_best_n_checkpoints: 3
+  early_stopping_patience: 3
+  early_stopping_threshold: 0.0001
+
+  # LoRA settings (disabled by default)
+  use_lora: false
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  lora_target_modules: ["q", "v"]
+
+# Monitoring configuration
+monitoring:
+  use_wandb: true
+  wandb_project: "chef-genius-recipes"
+  wandb_entity: null
+  discord_webhook: null
+  alert_phone: null
+  log_every_n_steps: 50
+  eval_every_n_steps: 1000
+  generate_samples_every_n_steps: 1000
+  monitor_system_metrics: true
+  monitor_data_pipeline: true
+
+# Evaluation configuration
+evaluation:
+  compute_bleu: true
+  compute_rouge: true
+  compute_perplexity: true
+  compute_ingredient_coherence: true
+  compute_instruction_quality: true
+  validation_prompts:
+    - "Create a simple pasta dish with tomatoes and basil."
+    - "Make a healthy breakfast with eggs and vegetables."
+    - "Design a quick 15-minute dinner recipe."
+    - "Bake chocolate chip cookies that are crispy outside and chewy inside."
+    - "Prepare a vegetarian curry with chickpeas and spinach."

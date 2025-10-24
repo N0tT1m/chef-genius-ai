@@ -1,0 +1,28 @@
+# Core Training Requirements
+torch>=2.0.0
+transformers>=4.35.0
+pydantic>=2.0.0
+pyyaml>=6.0
+
+# Evaluation Metrics
+rouge-score>=0.1.2
+nltk>=3.8
+
+# Monitoring & Logging
+wandb>=0.15.0
+psutil>=5.9.0
+GPUtil>=1.4.0
+
+# LoRA / PEFT (Optional but recommended)
+peft>=0.5.0
+bitsandbytes>=0.41.0  # For quantization
+
+# Data Loading
+numpy>=1.24.0
+
+# Notifications
+requests>=2.31.0  # For Discord webhooks
+
+# Development/Testing
+pytest>=7.4.0
+black>=23.0.0

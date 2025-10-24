@@ -1,0 +1,83 @@
+# Fast Iteration Configuration
+# Quick testing and experimentation with small model
+
+experiment_name: "fast-iteration-test"
+description: "Quick iteration config for testing and debugging"
+tags:
+  - "test"
+  - "fast"
+  - "debugging"
+
+# Model settings (small model for speed)
+model_name: "google/flan-t5-base"  # 250M parameters
+output_dir: "./models/fast-test"
+resume_from_checkpoint: null
+
+# Hardware (minimal requirements)
+hardware:
+  cpu_cores: 8
+  cpu_threads: 16
+  gpu_vram_gb: 16.0
+  system_ram_gb: 32
+
+# Data configuration (smaller subset)
+data:
+  validated_data_dir: "./cli/validated_datasets"
+  min_quality_score: 0.5  # Lower threshold for more data
+  max_input_length: 128  # Shorter for speed
+  max_target_length: 256
+  train_split: 0.95  # More training, less validation
+  shuffle: true
+  num_workers: 2
+  use_rust_loader: false
+
+# Optimization (higher LR for faster convergence)
+optimization:
+  optimizer_type: "adamw"
+  learning_rate: 0.001  # Higher LR
+  weight_decay: 0.01
+  max_grad_norm: 1.0
+  warmup_steps: 100  # Short warmup
+  scheduler_type: "constant"
+  betas: [0.9, 0.999]
+  eps: 1.0e-08
+
+# Training (minimal config)
+training:
+  num_epochs: 1  # Just one epoch
+  batch_size: 16
+  gradient_accumulation_steps: 1
+  use_bf16: true
+  use_fp16: false
+  gradient_checkpointing: false  # Disabled for speed
+  use_flash_attention: true
+  use_torch_compile: false  # Disabled for faster startup
+  disable_cudagraphs: true
+  checkpoint_every_n_steps: 500
+  keep_best_n_checkpoints: 1
+  early_stopping_patience: 10
+  early_stopping_threshold: 0.001
+  use_lora: false
+
+# Monitoring (minimal)
+monitoring:
+  use_wandb: false  # Disabled for speed
+  wandb_project: "test"
+  wandb_entity: null
+  discord_webhook: null
+  alert_phone: null
+  log_every_n_steps: 10
+  eval_every_n_steps: 100
+  generate_samples_every_n_steps: 100
+  monitor_system_metrics: false
+  monitor_data_pipeline: false
+
+# Evaluation (minimal)
+evaluation:
+  compute_bleu: false
+  compute_rouge: false
+  compute_perplexity: true
+  compute_ingredient_coherence: false
+  compute_instruction_quality: false
+  validation_prompts:
+    - "Make a simple recipe."

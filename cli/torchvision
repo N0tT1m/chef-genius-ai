@@ -1,0 +1,2 @@
+Looking in indexes: https://download.pytorch.org/whl/cu126
+Requirement already satisfied: torch in /Users/timmy/workspace/ai-apps/chef-genius/.venv/lib/python3.13/site-packages (2.7.1)

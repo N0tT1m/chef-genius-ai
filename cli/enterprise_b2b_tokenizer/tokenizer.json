@@ -1,0 +1,8812 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "[PAD]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "[UNK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 2,
+      "content": "[CLS]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 3,
+      "content": "[SEP]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 4,
+      "content": "[MASK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 5,
+      "content": "[BATCH_START]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 6,
+      "content": "[BATCH_END]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 7,
+      "content": "[RECIPE_START]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 8,
+      "content": "[RECIPE_END]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 9,
+      "content": "[PROCEDURE_START]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 10,
+      "content": "[PROCEDURE_END]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 11,
+      "content": "[SAFETY_START]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 12,
+      "content": "[SAFETY_END]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 13,
+      "content": "[COST_START]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 14,
+      "content": "[COST_END]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 15,
+      "content": "[YIELD_START]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 16,
+      "content": "[YIELD_END]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 17,
+      "content": "[PREP_STATION]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 18,
+      "content": "[COOK_STATION]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 19,
+      "content": "[PLATING_STATION]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 20,
+      "content": "[SERVICE_STATION]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 21,
+      "content": "[EQUIPMENT_REQUIRED]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 22,
+      "content": "[TEMPERATURE_CRITICAL]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 23,
+      "content": "[TIME_SENSITIVE]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 24,
+      "content": "[SMALL_BATCH]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 25,
+      "content": "[MEDIUM_BATCH]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 26,
+      "content": "[LARGE_BATCH]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 27,
+      "content": "[INDUSTRIAL_BATCH]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 28,
+      "content": "[SERVING_10]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 29,
+      "content": "[SERVING_50]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 30,
+      "content": "[SERVING_100]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 31,
+      "content": "[SERVING_500]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 32,
+      "content": "[SERVING_1000]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 33,
+      "content": "[HACCP_POINT]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 34,
+      "content": "[ALLERGEN_ALERT]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 35,
+      "content": "[COST_CRITICAL]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 36,
+      "content": "[EFFICIENCY_FOCUS]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 37,
+      "content": "[SKILL_REQUIRED]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 38,
+      "content": "[EQUIPMENT_INTENSIVE]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 39,
+      "content": "[TIME_CRITICAL]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 40,
+      "content": "[GLUTEN_FREE]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 41,
+      "content": "[DAIRY_FREE]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 42,
+      "content": "[NUT_FREE]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 43,
+      "content": "[VEGAN]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 44,
+      "content": "[KOSHER]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 45,
+      "content": "[HALAL]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 46,
+      "content": "[LOW_SODIUM]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 47,
+      "content": "[DIABETIC]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 48,
+      "content": "[HEART_HEALTHY]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 49,
+      "content": "[HIGH_PROTEIN]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 50,
+      "content": "[MORNING_PREP]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 51,
+      "content": "[LUNCH_SERVICE]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 52,
+      "content": "[DINNER_SERVICE]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 53,
+      "content": "[CATERING]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 54,
+      "content": "[INSTITUTIONAL]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 55,
+      "content": "[HEALTHCARE]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 56,
+      "content": "[EDUCATION]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 57,
+      "content": "[CORPORATE]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    }
+  ],
+  "normalizer": {
+    "type": "Sequence",
+    "normalizers": [
+      {
+        "type": "NFD"
+      },
+      {
+        "type": "Lowercase"
+      },
+      {
+        "type": "StripAccents"
+      }
+    ]
+  },
+  "pre_tokenizer": {
+    "type": "Sequence",
+    "pretokenizers": [
+      {
+        "type": "Whitespace"
+      },
+      {
+        "type": "Punctuation",
+        "behavior": "Isolated"
+      }
+    ]
+  },
+  "post_processor": {
+    "type": "BertProcessing",
+    "sep": [
+      "[SEP]",
+      3
+    ],
+    "cls": [
+      "[CLS]",
+      2
+    ]
+  },
+  "decoder": {
+    "type": "BPEDecoder",
+    "suffix": "</w>"
+  },
+  "model": {
+    "type": "BPE",
+    "dropout": null,
+    "unk_token": "[UNK]",
+    "continuing_subword_prefix": "##",
+    "end_of_word_suffix": null,
+    "fuse_unk": false,
+    "byte_fallback": false,
+    "ignore_merges": false,
+    "vocab": {
+      "[PAD]": 0,
+      "[UNK]": 1,
+      "[CLS]": 2,
+      "[SEP]": 3,
+      "[MASK]": 4,
+      "[BATCH_START]": 5,
+      "[BATCH_END]": 6,
+      "[RECIPE_START]": 7,
+      "[RECIPE_END]": 8,
+      "[PROCEDURE_START]": 9,
+      "[PROCEDURE_END]": 10,
+      "[SAFETY_START]": 11,
+      "[SAFETY_END]": 12,
+      "[COST_START]": 13,
+      "[COST_END]": 14,
+      "[YIELD_START]": 15,
+      "[YIELD_END]": 16,
+      "[PREP_STATION]": 17,
+      "[COOK_STATION]": 18,
+      "[PLATING_STATION]": 19,
+      "[SERVICE_STATION]": 20,
+      "[EQUIPMENT_REQUIRED]": 21,
+      "[TEMPERATURE_CRITICAL]": 22,
+      "[TIME_SENSITIVE]": 23,
+      "[SMALL_BATCH]": 24,
+      "[MEDIUM_BATCH]": 25,
+      "[LARGE_BATCH]": 26,
+      "[INDUSTRIAL_BATCH]": 27,
+      "[SERVING_10]": 28,
+      "[SERVING_50]": 29,
+      "[SERVING_100]": 30,
+      "[SERVING_500]": 31,
+      "[SERVING_1000]": 32,
+      "[HACCP_POINT]": 33,
+      "[ALLERGEN_ALERT]": 34,
+      "[COST_CRITICAL]": 35,
+      "[EFFICIENCY_FOCUS]": 36,
+      "[SKILL_REQUIRED]": 37,
+      "[EQUIPMENT_INTENSIVE]": 38,
+      "[TIME_CRITICAL]": 39,
+      "[GLUTEN_FREE]": 40,
+      "[DAIRY_FREE]": 41,
+      "[NUT_FREE]": 42,
+      "[VEGAN]": 43,
+      "[KOSHER]": 44,
+      "[HALAL]": 45,
+      "[LOW_SODIUM]": 46,
+      "[DIABETIC]": 47,
+      "[HEART_HEALTHY]": 48,
+      "[HIGH_PROTEIN]": 49,
+      "[MORNING_PREP]": 50,
+      "[LUNCH_SERVICE]": 51,
+      "[DINNER_SERVICE]": 52,
+      "[CATERING]": 53,
+      "[INSTITUTIONAL]": 54,
+      "[HEALTHCARE]": 55,
+      "[EDUCATION]": 56,
+      "[CORPORATE]": 57,
+      "$": 58,
+      "%": 59,
+      "'": 60,
+      "(": 61,
+      ")": 62,
+      ",": 63,
+      "-": 64,
+      ".": 65,
+      "0": 66,
+      "1": 67,
+      "2": 68,
+      "3": 69,
+      "4": 70,
+      "5": 71,
+      "6": 72,
+      "7": 73,
+      "8": 74,
+      "9": 75,
+      ":": 76,
+      "[": 77,
+      "]": 78,
+      "_": 79,
+      "a": 80,
+      "b": 81,
+      "c": 82,
+      "d": 83,
+      "e": 84,
+      "f": 85,
+      "g": 86,
+      "h": 87,
+      "i": 88,
+      "j": 89,
+      "k": 90,
+      "l": 91,
+      "m": 92,
+      "n": 93,
+      "o": 94,
+      "p": 95,
+      "q": 96,
+      "r": 97,
+      "s": 98,
+      "t": 99,
+      "u": 100,
+      "v": 101,
+      "w": 102,
+      "x": 103,
+      "y": 104,
+      "z": 105,
+      "°": 106,
+      "##o": 107,
+      "##n": 108,
+      "##t": 109,
+      "##r": 110,
+      "##l": 111,
+      "##i": 112,
+      "##z": 113,
+      "##e": 114,
+      "##s": 115,
+      "##d": 116,
+      "##a": 117,
+      "##g": 118,
+      "##f": 119,
+      "##p": 120,
+      "##m": 121,
+      "##h": 122,
+      "##y": 123,
+      "##u": 124,
+      "##3": 125,
+      "##w": 126,
+      "##4": 127,
+      "##c": 128,
+      "##7": 129,
+      "##x": 130,
+      "##q": 131,
+      "##b": 132,
+      "##k": 133,
+      "##5": 134,
+      "##8": 135,
+      "##0": 136,
+      "##v": 137,
+      "##9": 138,
+      "##2": 139,
+      "##1": 140,
+      "##6": 141,
+      "##j": 142,
+      "##ti": 143,
+      "##on": 144,
+      "##er": 145,
+      "##en": 146,
+      "##or": 147,
+      "##tion": 148,
+      "##ro": 149,
+      "##nd": 150,
+      "##re": 151,
+      "##ent": 152,
+      "##in": 153,
+      "##ce": 154,
+      "##al": 155,
+      "##ation": 156,
+      "co": 157,
+      "##st": 158,
+      "##ment": 159,
+      "pro": 160,
+      "op": 161,
+      "##du": 162,
+      "##ci": 163,
+      "##an": 164,
+      "re": 165,
+      "for": 166,
+      "and": 167,
+      "##ing": 168,
+      "##at": 169,
+      "##mp": 170,
+      "st": 171,
+      "##ul": 172,
+      "##ar": 173,
+      "con": 174,
+      "##li": 175,
+      "##le": 176,
+      "oper": 177,
+      "##it": 178,
+      "##ff": 179,
+      "##he": 180,
+      "proce": 181,
+      "procedu": 182,
+      "procedure": 183,
+      "##pe": 184,
+      "cost": 185,
+      "##ui": 186,
+      "##oc": 187,
+      "##qui": 188,
+      "##ance": 189,
+      "##iz": 190,
+      "##et": 191,
+      "##si": 192,
+      "operation": 193,
+      "mon": 194,
+      "##itor": 195,
+      "monitor": 196,
+      "##ol": 197,
+      "cont": 198,
+      "##ri": 199,
+      "##ction": 200,
+      "in": 201,
+      "sta": 202,
+      "imp": 203,
+      "eff": 204,
+      "##rol": 205,
+      "control": 206,
+      "per": 207,
+      "##lement": 208,
+      "implement": 209,
+      "##ure": 210,
+      "##cipe": 211,
+      "recipe": 212,
+      "##tim": 213,
+      "optim": 214,
+      "##es": 215,
+      "##ur": 216,
+      "##ge": 217,
+      "the": 218,
+      "optimiz": 219,
+      "##cy": 220,
+      "##ency": 221,
+      "##ici": 222,
+      "effici": 223,
+      "efficiency": 224,
+      "requi": 225,
+      "require": 226,
+      "##ut": 227,
+      "##ch": 228,
+      "##tin": 229,
+      "ser": 230,
+      "serv": 231,
+      "comp": 232,
+      "ca": 233,
+      "compli": 234,
+      "compliance": 235,
+      "produ": 236,
+      "##ain": 237,
+      "##ate": 238,
+      "##ting": 239,
+      "##atch": 240,
+      "batch": 241,
+      "##ts": 242,
+      "##od": 243,
+      "##art": 244,
+      "##gh": 245,
+      "prot": 246,
+      "##ocu": 247,
+      "docu": 248,
+      "document": 249,
+      "cal": 250,
+      "##ocol": 251,
+      "protocol": 252,
+      "##ard": 253,
+      "te": 254,
+      "##age": 255,
+      "##ndard": 256,
+      "standard": 257,
+      "##nal": 258,
+      "start": 259,
+      "anal": 260,
+      "##ysi": 261,
+      "analysi": 262,
+      "analysis": 263,
+      "optimization": 264,
+      "##ating": 265,
+      "th": 266,
+      "temp": 267,
+      "##el": 268,
+      "##ric": 269,
+      "##ugh": 270,
+      "##erat": 271,
+      "##pli": 272,
+      "com": 273,
+      "operating": 274,
+      "##plier": 275,
+      "##cul": 276,
+      "##rough": 277,
+      "through": 278,
+      "temperat": 279,
+      "temperature": 280,
+      "##ice": 281,
+      "production": 282,
+      "calcul": 283,
+      "##cal": 284,
+      "##pment": 285,
+      "service": 286,
+      "equi": 287,
+      "equipment": 288,
+      "##ory": 289,
+      "consi": 290,
+      "consist": 291,
+      "##as": 292,
+      "##ac": 293,
+      "consistent": 294,
+      "##pa": 295,
+      "##for": 296,
+      "met": 297,
+      "##rics": 298,
+      "metrics": 299,
+      "##ver": 300,
+      "##mer": 301,
+      "lo": 302,
+      "staff": 303,
+      "##and": 304,
+      "mul": 305,
+      "##tiplier": 306,
+      "multiplier": 307,
+      "of": 308,
+      "end": 309,
+      "##ve": 310,
+      "requirement": 311,
+      "pl": 312,
+      "log": 313,
+      "##cial": 314,
+      "##ty": 315,
+      "commer": 316,
+      "commercial": 317,
+      "##zation": 318,
+      "##city": 319,
+      "capa": 320,
+      "capacity": 321,
+      "##ste": 322,
+      "ins": 323,
+      "on": 324,
+      "##tical": 325,
+      "po": 326,
+      "fo": 327,
+      "inspe": 328,
+      "food": 329,
+      "siz": 330,
+      "##up": 331,
+      "inspection": 332,
+      "size": 333,
+      "cri": 334,
+      "dur": 335,
+      "critical": 336,
+      "during": 337,
+      "qu": 338,
+      "sc": 339,
+      "##cti": 340,
+      "##hedu": 341,
+      "requires": 342,
+      "schedu": 343,
+      "plan": 344,
+      "poin": 345,
+      "##ning": 346,
+      "hac": 347,
+      "##cp": 348,
+      "##cent": 349,
+      "haccp": 350,
+      "percent": 351,
+      "requirements": 352,
+      "schedule": 353,
+      "planning": 354,
+      "percentage": 355,
+      "qual": 356,
+      "calculation": 357,
+      "tr": 358,
+      "##form": 359,
+      "##atory": 360,
+      "perform": 361,
+      "performance": 362,
+      "en": 363,
+      "##am": 364,
+      "##ity": 365,
+      "rate": 366,
+      "##ow": 367,
+      "##put": 368,
+      "throughput": 369,
+      "uti": 370,
+      "##lization": 371,
+      "utilization": 372,
+      "cle": 373,
+      "##il": 374,
+      "##sure": 375,
+      "to": 376,
+      "##very": 377,
+      "##ctive": 378,
+      "clean": 379,
+      "implementation": 380,
+      "quality": 381,
+      "##ust": 382,
+      "cleaning": 383,
+      "sa": 384,
+      "sy": 385,
+      "##stem": 386,
+      "ensure": 387,
+      "system": 388,
+      "ensures": 389,
+      "pre": 390,
+      "operations": 391,
+      "us": 392,
+      "saf": 393,
+      "##sul": 394,
+      "##ful": 395,
+      "##reful": 396,
+      "resul": 397,
+      "careful": 398,
+      "results": 399,
+      "##king": 400,
+      "##aint": 401,
+      "maint": 402,
+      "train": 403,
+      "##ety": 404,
+      "safety": 405,
+      "yi": 406,
+      "##eld": 407,
+      "yield": 408,
+      "##out": 409,
+      "inv": 410,
+      "##ed": 411,
+      "bas": 412,
+      "##gul": 413,
+      "##nder": 414,
+      "regul": 415,
+      "procedures": 416,
+      "##ven": 417,
+      "coo": 418,
+      "throughout": 419,
+      "points": 420,
+      "##os": 421,
+      "ch": 422,
+      "every": 423,
+      "under": 424,
+      "regulatory": 425,
+      "must": 426,
+      "##ective": 427,
+      "pur": 428,
+      "##iod": 429,
+      "##pos": 430,
+      "##stand": 431,
+      "operational": 432,
+      "effective": 433,
+      "period": 434,
+      "optimizes": 435,
+      "understand": 436,
+      "purpos": 437,
+      "periods": 438,
+      "purposes": 439,
+      "de": 440,
+      "##ings": 441,
+      "ho": 442,
+      "##is": 443,
+      "##iti": 444,
+      "pan": 445,
+      "##ll": 446,
+      "calculate": 447,
+      "##un": 448,
+      "all": 449,
+      "##entory": 450,
+      "inventory": 451,
+      "##um": 452,
+      "##low": 453,
+      "##enance": 454,
+      "maintenance": 455,
+      "fol": 456,
+      "follow": 457,
+      "10": 458,
+      "set": 459,
+      "startup": 460,
+      "cooking": 461,
+      "lar": 462,
+      "large": 463,
+      "sup": 464,
+      "min": 465,
+      "oven": 466,
+      "be": 467,
+      "servings": 468,
+      "par": 469,
+      "using": 470,
+      "100": 471,
+      "##urs": 472,
+      "##bi": 473,
+      "##utes": 474,
+      "minutes": 475,
+      "30": 476,
+      "##ss": 477,
+      "por": 478,
+      "##ail": 479,
+      "##fore": 480,
+      "before": 481,
+      "portion": 482,
+      "combi": 483,
+      "training": 484,
+      "che": 485,
+      "dail": 486,
+      "##if": 487,
+      "daily": 488,
+      "scal": 489,
+      "##ct": 490,
+      "##ck": 491,
+      "##ly": 492,
+      "##eas": 493,
+      "base": 494,
+      "##ces": 495,
+      "check": 496,
+      "as": 497,
+      "by": 498,
+      "man": 499,
+      "le": 500,
+      "ste": 501,
+      "##agement": 502,
+      "management": 503,
+      "supplier": 504,
+      "##ic": 505,
+      "point": 506,
+      "##cc": 507,
+      "##orage": 508,
+      "storage": 509,
+      "hot": 510,
+      "based": 511,
+      "san": 512,
+      "vol": 513,
+      "##di": 514,
+      "##vel": 515,
+      "##erg": 516,
+      "##ume": 517,
+      "saniti": 518,
+      "volume": 519,
+      "##im": 520,
+      "level": 521,
+      "##aste": 522,
+      "##ord": 523,
+      "tim": 524,
+      "prep": 525,
+      "##ication": 526,
+      "sh": 527,
+      "hours": 528,
+      "##ities": 529,
+      "allerg": 530,
+      "allergen": 531,
+      "32": 532,
+      "at": 533,
+      "pric": 534,
+      "##ross": 535,
+      "##ine": 536,
+      "hotel": 537,
+      "325": 538,
+      "pricing": 539,
+      "40": 540,
+      "mand": 541,
+      "use": 542,
+      "waste": 543,
+      "##pare": 544,
+      "prepare": 545,
+      "##gre": 546,
+      "ingre": 547,
+      "##dient": 548,
+      "ingredient": 549,
+      "35": 550,
+      "fl": 551,
+      "over": 552,
+      "logs": 553,
+      "pans": 554,
+      "has": 555,
+      "is": 556,
+      "optimal": 557,
+      "sanitization": 558,
+      "mandatory": 559,
+      "350": 560,
+      "##ix": 561,
+      "##all": 562,
+      "cor": 563,
+      "di": 564,
+      "ra": 565,
+      "cool": 566,
+      "corre": 567,
+      "##eal": 568,
+      "##vi": 569,
+      "##ill": 570,
+      "cross": 571,
+      "##ou": 572,
+      "##ination": 573,
+      "contam": 574,
+      "maintain": 575,
+      "scaling": 576,
+      "steam": 577,
+      "contamination": 578,
+      "men": 579,
+      "ro": 580,
+      "##ast": 581,
+      "##uation": 582,
+      "deli": 583,
+      "##ous": 584,
+      "menu": 585,
+      "fin": 586,
+      "im": 587,
+      "mix": 588,
+      "##ec": 589,
+      "devi": 590,
+      "meas": 591,
+      "##ls": 592,
+      "##ber": 593,
+      "##ock": 594,
+      "##eter": 595,
+      "##urement": 596,
+      "product": 597,
+      "deviation": 598,
+      "measurement": 599,
+      "75": 600,
+      "aff": 601,
+      "action": 602,
+      "seas": 603,
+      "##hed": 604,
+      "produces": 605,
+      "calls": 606,
+      "##ows": 607,
+      "##ished": 608,
+      "scale": 609,
+      "shows": 610,
+      "overall": 611,
+      "diet": 612,
+      "raw": 613,
+      "finished": 614,
+      "mixer": 615,
+      "##ects": 616,
+      "affects": 617,
+      "season": 618,
+      "ad": 619,
+      "bl": 620,
+      "dis": 621,
+      "ne": 622,
+      "##ak": 623,
+      "##acking": 624,
+      "tracking": 625,
+      "preven": 626,
+      "chill": 627,
+      "corrective": 628,
+      "blast": 629,
+      "prevention": 630,
+      "au": 631,
+      "bu": 632,
+      "pri": 633,
+      "tur": 634,
+      "var": 635,
+      "wh": 636,
+      "##over": 637,
+      "##oun": 638,
+      "##nover": 639,
+      "##tation": 640,
+      "##iance": 641,
+      "##igh": 642,
+      "##dit": 643,
+      "##uct": 644,
+      "##uous": 645,
+      "##coun": 646,
+      "contin": 647,
+      "##eline": 648,
+      "##ctiv": 649,
+      "##edi": 650,
+      "fluct": 651,
+      "rotation": 652,
+      "delivery": 653,
+      "seasonal": 654,
+      "audit": 655,
+      "buff": 656,
+      "price": 657,
+      "turnover": 658,
+      "variance": 659,
+      "continuous": 660,
+      "fluctuation": 661,
+      "15": 662,
+      "##th": 663,
+      "##ir": 664,
+      "##medi": 665,
+      "##itch": 666,
+      "cook": 667,
+      "immedi": 668,
+      "immediate": 669,
+      "fre": 670,
+      "kitch": 671,
+      "pe": 672,
+      "##pp": 673,
+      "##ort": 674,
+      "##list": 675,
+      "checklist": 676,
+      "when": 677,
+      "immediately": 678,
+      "free": 679,
+      "kitchen": 680,
+      "br": 681,
+      "occ": 682,
+      "we": 683,
+      "wal": 684,
+      "##nment": 685,
+      "##gi": 686,
+      "##gnment": 687,
+      "##signment": 688,
+      "assignment": 689,
+      "occurs": 690,
+      "walk": 691,
+      "acc": 692,
+      "sal": 693,
+      "##rate": 694,
+      "##ab": 695,
+      "##port": 696,
+      "##ves": 697,
+      "##rove": 698,
+      "##ording": 699,
+      "##eters": 700,
+      "according": 701,
+      "activ": 702,
+      "fi": 703,
+      "fif": 704,
+      "##oti": 705,
+      "##iv": 706,
+      "##goti": 707,
+      "##ply": 708,
+      "##mand": 709,
+      "##just": 710,
+      "##ndings": 711,
+      "##ceiv": 712,
+      "##duces": 713,
+      "receiv": 714,
+      "reduces": 715,
+      "strate": 716,
+      "monitoring": 717,
+      "improve": 718,
+      "qualif": 719,
+      "##ameters": 720,
+      "demand": 721,
+      "supply": 722,
+      "parameters": 723,
+      "timeline": 724,
+      "adjust": 725,
+      "discoun": 726,
+      "negoti": 727,
+      "##ight": 728,
+      "fluctuations": 729,
+      "peak": 730,
+      "weight": 731,
+      "##gies": 732,
+      "activities": 733,
+      "findings": 734,
+      "fifo": 735,
+      "receiving": 736,
+      "strategies": 737,
+      "improvement": 738,
+      "qualification": 739,
+      "discounts": 740,
+      "negotiation": 741,
+      "##ais": 742,
+      "coun": 743,
+      "hol": 744,
+      "##pper": 745,
+      "hold": 746,
+      "sp": 747,
+      "##fication": 748,
+      "stock": 749,
+      "##iral": 750,
+      "spiral": 751,
+      "cer": 752,
+      "til": 753,
+      "up": 754,
+      "##tification": 755,
+      "conve": 756,
+      "time": 757,
+      "cooler": 758,
+      "chiller": 759,
+      "brais": 760,
+      "certification": 761,
+      "tilting": 762,
+      "convection": 763,
+      "braising": 764,
+      "ket": 765,
+      "she": 766,
+      "seal": 767,
+      "vac": 768,
+      "##opper": 769,
+      "##tle": 770,
+      "##amer": 771,
+      "##uum": 772,
+      "##alo": 773,
+      "opport": 774,
+      "##olves": 775,
+      "protocols": 776,
+      "##ander": 777,
+      "##amber": 778,
+      "##amander": 779,
+      "involves": 780,
+      "chain": 781,
+      "chopper": 782,
+      "chamber": 783,
+      "##unities": 784,
+      "steamer": 785,
+      "buffalo": 786,
+      "salamander": 787,
+      "kettle": 788,
+      "sealer": 789,
+      "vacuum": 790,
+      "opportunities": 791,
+      "count": 792,
+      "##zer": 793,
+      "holding": 794,
+      "##se": 795,
+      "##ater": 796,
+      "##act": 797,
+      "dow": 798,
+      "spe": 799,
+      "reord": 800,
+      "down": 801,
+      "reorder": 802,
+      "can": 803,
+      "##ter": 804,
+      "##ution": 805,
+      "##ry": 806,
+      "##ze": 807,
+      "##ange": 808,
+      "sheet": 809,
+      "heal": 810,
+      "station": 811,
+      "health": 812,
+      "bre": 813,
+      "lb": 814,
+      "##of": 815,
+      "##de": 816,
+      "freezer": 817,
+      "fact": 818,
+      "mar": 819,
+      "wit": 820,
+      "##ad": 821,
+      "##fri": 822,
+      "refri": 823,
+      "##led": 824,
+      "##ization": 825,
+      "controlled": 826,
+      "plating": 827,
+      "schedules": 828,
+      "cooling": 829,
+      "factor": 830,
+      "with": 831,
+      "refrig": 832,
+      "gl": 833,
+      "lab": 834,
+      "was": 835,
+      "wash": 836,
+      "num": 837,
+      "case": 838,
+      "number": 839,
+      "oun": 840,
+      "##ram": 841,
+      "##ld": 842,
+      "cold": 843,
+      "##ary": 844,
+      "##aration": 845,
+      "contain": 846,
+      "loss": 847,
+      "quart": 848,
+      "preparation": 849,
+      "##able": 850,
+      "speed": 851,
+      "ounce": 852,
+      "ful": 853,
+      "gross": 854,
+      "hal": 855,
+      "table": 856,
+      "water": 857,
+      "##ture": 858,
+      "##ie": 859,
+      "##gin": 860,
+      "##mb": 861,
+      "##xture": 862,
+      "##tic": 863,
+      "##uid": 864,
+      "##sion": 865,
+      "texture": 866,
+      "standards": 867,
+      "pres": 868,
+      "lbs": 869,
+      "labor": 870,
+      "container": 871,
+      "full": 872,
+      "ass": 873,
+      "fry": 874,
+      "gri": 875,
+      "li": 876,
+      "me": 877,
+      "ren": 878,
+      "range": 879,
+      "sli": 880,
+      "un": 881,
+      "vi": 882,
+      "wel": 883,
+      "##id": 884,
+      "##da": 885,
+      "##gan": 886,
+      "##fit": 887,
+      "##ual": 888,
+      "##cer": 889,
+      "##one": 890,
+      "code": 891,
+      "profit": 892,
+      "##ator": 893,
+      "##quid": 894,
+      "standardization": 895,
+      "##erator": 896,
+      "margin": 897,
+      "refrigerator": 898,
+      "pressure": 899,
+      "fryer": 900,
+      "liquid": 901,
+      "slicer": 902,
+      "well": 903,
+      "ex": 904,
+      "hand": 905,
+      "##ove": 906,
+      "##ach": 907,
+      "proof": 908,
+      "bread": 909,
+      "cut": 910,
+      "or": 911,
+      "rin": 912,
+      "ver": 913,
+      "##ough": 914,
+      "##ew": 915,
+      "##ag": 916,
+      "##ace": 917,
+      "place": 918,
+      "change": 919,
+      "rinse": 920,
+      "are": 921,
+      "bo": 922,
+      "dice": 923,
+      "dry": 924,
+      "dough": 925,
+      "gall": 926,
+      "he": 927,
+      "mis": 928,
+      "sol": 929,
+      "##ne": 930,
+      "##ling": 931,
+      "##her": 932,
+      "##cord": 933,
+      "##ang": 934,
+      "record": 935,
+      "##ess": 936,
+      "serving": 937,
+      "test": 938,
+      "temperatures": 939,
+      "clear": 940,
+      "sanitizer": 941,
+      "sanitize": 942,
+      "dietary": 943,
+      "sheeter": 944,
+      "proofer": 945,
+      "gallon": 946,
+      "mise": 947,
+      "solution": 948,
+      "20": 949,
+      "bro": 950,
+      "bag": 951,
+      "dr": 952,
+      "edi": 953,
+      "gram": 954,
+      "ind": 955,
+      "kil": 956,
+      "lit": 957,
+      "mat": 958,
+      "mil": 959,
+      "nin": 960,
+      "net": 961,
+      "pin": 962,
+      "sk": 963,
+      "six": 964,
+      "sof": 965,
+      "ton": 966,
+      "tri": 967,
+      "taste": 968,
+      "ve": 969,
+      "##og": 970,
+      "##tution": 971,
+      "##rin": 972,
+      "##ied": 973,
+      "##ef": 974,
+      "##ection": 975,
+      "##ay": 976,
+      "##ape": 977,
+      "##ps": 978,
+      "##pro": 979,
+      "##pid": 980,
+      "##mo": 981,
+      "##mit": 982,
+      "##und": 983,
+      "##ble": 984,
+      "##jection": 985,
+      "##titution": 986,
+      "##ced": 987,
+      "report": 988,
+      "reach": 989,
+      "##lili": 990,
+      "process": 991,
+      "int": 992,
+      "permit": 993,
+      "##uten": 994,
+      "##ained": 995,
+      "##ated": 996,
+      "ther": 997,
+      "comm": 998,
+      "plate": 999,
+      "institution": 1000,
+      "pound": 1001,
+      "scheduling": 1002,
+      "##eds": 1003,
+      "allow": 1004,
+      "minced": 1005,
+      "beef": 1006,
+      "shif": 1007,
+      "ingredients": 1008,
+      "fluid": 1009,
+      "rapid": 1010,
+      "needs": 1011,
+      "special": 1012,
+      "glove": 1013,
+      "gluten": 1014,
+      "washing": 1015,
+      "quarter": 1016,
+      "half": 1017,
+      "unit": 1018,
+      "box": 1019,
+      "diced": 1020,
+      "drained": 1021,
+      "edible": 1022,
+      "kilog": 1023,
+      "liter": 1024,
+      "millili": 1025,
+      "ninth": 1026,
+      "pint": 1027,
+      "skill": 1028,
+      "sixth": 1029,
+      "soft": 1030,
+      "trim": 1031,
+      "institutional": 1032,
+      "kilogram": 1033,
+      "milliliter": 1034,
+      "16": 1035,
+      "25": 1036,
+      "app": 1037,
+      "bin": 1038,
+      "bone": 1039,
+      "cy": 1040,
+      "cir": 1041,
+      "cater": 1042,
+      "dang": 1043,
+      "ev": 1044,
+      "even": 1045,
+      "fro": 1046,
+      "fda": 1047,
+      "gr": 1048,
+      "gu": 1049,
+      "gmp": 1050,
+      "guid": 1051,
+      "high": 1052,
+      "kos": 1053,
+      "loc": 1054,
+      "lif": 1055,
+      "line": 1056,
+      "match": 1057,
+      "mod": 1058,
+      "nut": 1059,
+      "oz": 1060,
+      "piz": 1061,
+      "pure": 1062,
+      "run": 1063,
+      "rail": 1064,
+      "sq": 1065,
+      "sod": 1066,
+      "sous": 1067,
+      "sne": 1068,
+      "smo": 1069,
+      "tw": 1070,
+      "tes": 1071,
+      "ven": 1072,
+      "vis": 1073,
+      "wo": 1074,
+      "zone": 1075,
+      "##oice": 1076,
+      "##tal": 1077,
+      "##tual": 1078,
+      "##ral": 1079,
+      "##rup": 1080,
+      "##ract": 1081,
+      "##rator": 1082,
+      "##len": 1083,
+      "##ical": 1084,
+      "##ium": 1085,
+      "##ick": 1086,
+      "##za": 1087,
+      "##zen": 1088,
+      "##ein": 1089,
+      "##eze": 1090,
+      "##emb": 1091,
+      "##etic": 1092,
+      "##sa": 1093,
+      "##su": 1094,
+      "##sting": 1095,
+      "##dor": 1096,
+      "##date": 1097,
+      "##drator": 1098,
+      "##aw": 1099,
+      "##abi": 1100,
+      "##gine": 1101,
+      "##fe": 1102,
+      "##plen": 1103,
+      "##mal": 1104,
+      "##hy": 1105,
+      "##hment": 1106,
+      "##uction": 1107,
+      "##utic": 1108,
+      "##cle": 1109,
+      "##cking": 1110,
+      "##xan": 1111,
+      "##bin": 1112,
+      "##bution": 1113,
+      "##ket": 1114,
+      "##kage": 1115,
+      "##tiss": 1116,
+      "##ering": 1117,
+      "##erie": 1118,
+      "##erated": 1119,
+      "##ermal": 1120,
+      "##orie": 1121,
+      "##tional": 1122,
+      "##aluation": 1123,
+      "costing": 1124,
+      "##stock": 1125,
+      "##duction": 1126,
+      "##anical": 1127,
+      "rehe": 1128,
+      "reth": 1129,
+      "replen": 1130,
+      "##mption": 1131,
+      "stri": 1132,
+      "conver": 1133,
+      "consu": 1134,
+      "##lity": 1135,
+      "procedural": 1136,
+      "##pedi": 1137,
+      "##petual": 1138,
+      "##etency": 1139,
+      "##etary": 1140,
+      "##olation": 1141,
+      "##oline": 1142,
+      "contri": 1143,
+      "contract": 1144,
+      "##rix": 1145,
+      "##ritional": 1146,
+      "injection": 1147,
+      "stage": 1148,
+      "perpetual": 1149,
+      "##ese": 1150,
+      "##chanical": 1151,
+      "servsa": 1152,
+      "competency": 1153,
+      "camb": 1154,
+      "cabin": 1155,
+      "productiv": 1156,
+      "##odity": 1157,
+      "protein": 1158,
+      "documentation": 1159,
+      "calorie": 1160,
+      "thaw": 1161,
+      "##ely": 1162,
+      "##culator": 1163,
+      "consistency": 1164,
+      "##mersion": 1165,
+      "low": 1166,
+      "pot": 1167,
+      "planetary": 1168,
+      "energ": 1169,
+      "engine": 1170,
+      "##iler": 1171,
+      "top": 1172,
+      "total": 1173,
+      "saw": 1174,
+      "usage": 1175,
+      "usda": 1176,
+      "safely": 1177,
+      "invoice": 1178,
+      "regulation": 1179,
+      "char": 1180,
+      "chick": 1181,
+      "undercoun": 1182,
+      "dead": 1183,
+      "dehy": 1184,
+      "##ishment": 1185,
+      "setup": 1186,
+      "checking": 1187,
+      "cheese": 1188,
+      "##ified": 1189,
+      "lexan": 1190,
+      "shock": 1191,
+      "shrin": 1192,
+      "mandoline": 1193,
+      "flat": 1194,
+      "overpro": 1195,
+      "overstock": 1196,
+      "diab": 1197,
+      "correction": 1198,
+      "rotiss": 1199,
+      "immersion": 1200,
+      "add": 1201,
+      "disrup": 1202,
+      "chilling": 1203,
+      "buffer": 1204,
+      "buffet": 1205,
+      "freeze": 1206,
+      "brc": 1207,
+      "salt": 1208,
+      "counting": 1209,
+      "stockout": 1210,
+      "update": 1211,
+      "healthy": 1212,
+      "break": 1213,
+      "market": 1214,
+      "refrigerated": 1215,
+      "halal": 1216,
+      "assess": 1217,
+      "assemb": 1218,
+      "grinder": 1219,
+      "grill": 1220,
+      "meat": 1221,
+      "mechanical": 1222,
+      "renal": 1223,
+      "renew": 1224,
+      "vide": 1225,
+      "violation": 1226,
+      "##ganic": 1227,
+      "profitabi": 1228,
+      "expedi": 1229,
+      "cutter": 1230,
+      "organic": 1231,
+      "vertical": 1232,
+      "area": 1233,
+      "heart": 1234,
+      "broiler": 1235,
+      "induction": 1236,
+      "matrix": 1237,
+      "vegan": 1238,
+      "##apeutic": 1239,
+      "processor": 1240,
+      "into": 1241,
+      "therapeutic": 1242,
+      "commodity": 1243,
+      "allowance": 1244,
+      "shift": 1245,
+      "cycle": 1246,
+      "circulator": 1247,
+      "catering": 1248,
+      "danger": 1249,
+      "evaluation": 1250,
+      "frozen": 1251,
+      "grater": 1252,
+      "guard": 1253,
+      "guideline": 1254,
+      "kosher": 1255,
+      "local": 1256,
+      "life": 1257,
+      "matching": 1258,
+      "modified": 1259,
+      "nutritional": 1260,
+      "pizza": 1261,
+      "pureed": 1262,
+      "sqf": 1263,
+      "sodium": 1264,
+      "sneeze": 1265,
+      "smoking": 1266,
+      "two": 1267,
+      "testing": 1268,
+      "vendor": 1269,
+      "visual": 1270,
+      "wok": 1271,
+      "##ermalization": 1272,
+      "reheat": 1273,
+      "rethermalization": 1274,
+      "replenishment": 1275,
+      "strips": 1276,
+      "conversion": 1277,
+      "consumption": 1278,
+      "contribution": 1279,
+      "servsafe": 1280,
+      "cambro": 1281,
+      "cabinet": 1282,
+      "productivity": 1283,
+      "energy": 1284,
+      "engineering": 1285,
+      "chicken": 1286,
+      "undercounter": 1287,
+      "dehydrator": 1288,
+      "shrinkage": 1289,
+      "overproduction": 1290,
+      "diabetic": 1291,
+      "rotisserie": 1292,
+      "disruption": 1293,
+      "assessment": 1294,
+      "assembly": 1295,
+      "renewal": 1296,
+      "profitability": 1297,
+      "expediting": 1298,
+      "14": 1299,
+      "19": 1300,
+      "12": 1301,
+      "50": 1302,
+      "##aves": 1303,
+      "13": 1304,
+      "17": 1305,
+      "18": 1306,
+      "11": 1307,
+      "23": 1308,
+      "24": 1309,
+      "27": 1310,
+      "28": 1311,
+      "29": 1312,
+      "22": 1313,
+      "21": 1314,
+      "26": 1315,
+      "bet": 1316,
+      "cel": 1317,
+      "each": 1318,
+      "may": 1319,
+      "tas": 1320,
+      "##nais": 1321,
+      "##ion": 1322,
+      "##een": 1323,
+      "##mat": 1324,
+      "##ub": 1325,
+      "##ween": 1326,
+      "##ks": 1327,
+      "##til": 1328,
+      "##onnais": 1329,
+      "##ery": 1330,
+      "##ening": 1331,
+      "rem": 1332,
+      "inter": 1333,
+      "required": 1334,
+      "loaves": 1335,
+      "onion": 1336,
+      "tomat": 1337,
+      "safe": 1338,
+      "##unction": 1339,
+      "##ify": 1340,
+      "pepper": 1341,
+      "label": 1342,
+      "until": 1343,
+      "verify": 1344,
+      "between": 1345,
+      "celery": 1346,
+      "mayonnais": 1347,
+      "tasks": 1348,
+      "internal": 1349,
+      "tomato": 1350,
+      "mayonnaise": 1351,
+      "37": 1352,
+      "45": 1353,
+      "85": 1354,
+      "an": 1355,
+      "al": 1356,
+      "bel": 1357,
+      "band": 1358,
+      "cub": 1359,
+      "function": 1360,
+      "hy": 1361,
+      "hum": 1362,
+      "if": 1363,
+      "jui": 1364,
+      "paste": 1365,
+      "rang": 1366,
+      "so": 1367,
+      "se": 1368,
+      "su": 1369,
+      "sur": 1370,
+      "tb": 1371,
+      "wor": 1372,
+      "war": 1373,
+      "ye": 1374,
+      "yel": 1375,
+      "##our": 1376,
+      "##oves": 1377,
+      "##sf": 1378,
+      "##sp": 1379,
+      "##ap": 1380,
+      "##aces": 1381,
+      "##gar": 1382,
+      "##get": 1383,
+      "##faces": 1384,
+      "##per": 1385,
+      "##pri": 1386,
+      "##mon": 1387,
+      "##che": 1388,
+      "##bine": 1389,
+      "##ert": 1390,
+      "##ene": 1391,
+      "##ence": 1392,
+      "##ensi": 1393,
+      "##ropri": 1394,
+      "proper": 1395,
+      "##ansf": 1396,
+      "revi": 1397,
+      "##les": 1398,
+      "##ite": 1399,
+      "##ols": 1400,
+      "inch": 1401,
+      "inform": 1402,
+      "combine": 1403,
+      "transf": 1404,
+      "tools": 1405,
+      "hour": 1406,
+      "portions": 1407,
+      "lemon": 1408,
+      "levels": 1409,
+      "short": 1410,
+      "flour": 1411,
+      "correct": 1412,
+      "final": 1413,
+      "white": 1414,
+      "wear": 1415,
+      "##giene": 1416,
+      "speci": 1417,
+      "breast": 1418,
+      "within": 1419,
+      "gloves": 1420,
+      "##idity": 1421,
+      "exce": 1422,
+      "hands": 1423,
+      "areas": 1424,
+      "heat": 1425,
+      "clearly": 1426,
+      "200": 1427,
+      "165": 1428,
+      "apply": 1429,
+      "appropri": 1430,
+      "remove": 1431,
+      "any": 1432,
+      "alert": 1433,
+      "below": 1434,
+      "cubes": 1435,
+      "hygiene": 1436,
+      "humidity": 1437,
+      "juice": 1438,
+      "ranges": 1439,
+      "soap": 1440,
+      "sugar": 1441,
+      "surfaces": 1442,
+      "tbsp": 1443,
+      "warm": 1444,
+      "yeast": 1445,
+      "yellow": 1446,
+      "##ches": 1447,
+      "review": 1448,
+      "information": 1449,
+      "transfer": 1450,
+      "shortening": 1451,
+      "appropriate": 1452,
+      "33": 1453,
+      "34": 1454,
+      "38": 1455,
+      "39": 1456,
+      "31": 1457,
+      "36": 1458,
+      "43": 1459,
+      "44": 1460,
+      "47": 1461,
+      "48": 1462,
+      "49": 1463,
+      "42": 1464,
+      "41": 1465,
+      "46": 1466,
+      "78": 1467,
+      "80": 1468,
+      "ab": 1469,
+      "active": 1470,
+      "air": 1471,
+      "bat": 1472,
+      "bul": 1473,
+      "bui": 1474,
+      "bow": 1475,
+      "bak": 1476,
+      "bay": 1477,
+      "car": 1478,
+      "cup": 1479,
+      "dre": 1480,
+      "date": 1481,
+      "ded": 1482,
+      "day": 1483,
+      "eg": 1484,
+      "fer": 1485,
+      "focu": 1486,
+      "gre": 1487,
+      "gat": 1488,
+      "gas": 1489,
+      "ha": 1490,
+      "hid": 1491,
+      "ill": 1492,
+      "jew": 1493,
+      "lock": 1494,
+      "mor": 1495,
+      "mal": 1496,
+      "medi": 1497,
+      "no": 1498,
+      "pie": 1499,
+      "prin": 1500,
+      "sw": 1501,
+      "sim": 1502,
+      "sec": 1503,
+      "sid": 1504,
+      "tar": 1505,
+      "tod": 1506,
+      "tag": 1507,
+      "ut": 1508,
+      "wed": 1509,
+      "wou": 1510,
+      "##oo": 1511,
+      "##opment": 1512,
+      "##ned": 1513,
+      "##ness": 1514,
+      "##te": 1515,
+      "##tur": 1516,
+      "##ted": 1517,
+      "##ration": 1518,
+      "##raint": 1519,
+      "##rub": 1520,
+      "##la": 1521,
+      "##lin": 1522,
+      "##ldu": 1523,
+      "##ib": 1524,
+      "##ire": 1525,
+      "##iform": 1526,
+      "##sh": 1527,
+      "##son": 1528,
+      "##ds": 1529,
+      "##den": 1530,
+      "##ding": 1531,
+      "##are": 1532,
+      "##gs": 1533,
+      "##gate": 1534,
+      "##gla": 1535,
+      "##fact": 1536,
+      "##fied": 1537,
+      "##function": 1538,
+      "##pt": 1539,
+      "##par": 1540,
+      "##part": 1541,
+      "##ples": 1542,
+      "##me": 1543,
+      "##meters": 1544,
+      "##yme": 1545,
+      "##uce": 1546,
+      "##uck": 1547,
+      "##ufact": 1548,
+      "##wer": 1549,
+      "##wned": 1550,
+      "##con": 1551,
+      "##cur": 1552,
+      "##care": 1553,
+      "##bri": 1554,
+      "##tigate": 1555,
+      "##onds": 1556,
+      "##ersh": 1557,
+      "##ened": 1558,
+      "##orough": 1559,
+      "##rots": 1560,
+      "##nds": 1561,
+      "##cest": 1562,
+      "##als": 1563,
+      "cover": 1564,
+      "##straint": 1565,
+      "projection": 1566,
+      "opening": 1567,
+      "##ciples": 1568,
+      "##ant": 1569,
+      "reas": 1570,
+      "retur": 1571,
+      "restraint": 1572,
+      "stric": 1573,
+      "concent": 1574,
+      "conne": 1575,
+      "##lete": 1576,
+      "##rial": 1577,
+      "##ctions": 1578,
+      "initi": 1579,
+      "person": 1580,
+      "##estigate": 1581,
+      "##urer": 1582,
+      "complete": 1583,
+      "compliant": 1584,
+      "##aining": 1585,
+      "protective": 1586,
+      "calib": 1587,
+      "##ards": 1588,
+      "thyme": 1589,
+      "thorough": 1590,
+      "##elry": 1591,
+      "##plies": 1592,
+      "##ase": 1593,
+      "loos": 1594,
+      "plain": 1595,
+      "power": 1596,
+      "inspect": 1597,
+      "scoo": 1598,
+      "scrub": 1599,
+      "calculations": 1600,
+      "cleanlin": 1601,
+      "##ustrial": 1602,
+      "sauce": 1603,
+      "investigate": 1604,
+      "chuck": 1605,
+      "devel": 1606,
+      "degla": 1607,
+      "depart": 1608,
+      "debri": 1609,
+      "##unic": 1610,
+      "fold": 1611,
+      "supplies": 1612,
+      "minim": 1613,
+      "begin": 1614,
+      "partic": 1615,
+      "##ssing": 1616,
+      "manufact": 1617,
+      "leaves": 1618,
+      "stew": 1619,
+      "##icated": 1620,
+      "times": 1621,
+      "shape": 1622,
+      "allergens": 1623,
+      "400": 1624,
+      "divi": 1625,
+      "##ecution": 1626,
+      "deviate": 1627,
+      "measurements": 1628,
+      "seasonings": 1629,
+      "adher": 1630,
+      "discon": 1631,
+      "##itching": 1632,
+      "cooked": 1633,
+      "bring": 1634,
+      "salad": 1635,
+      "##rated": 1636,
+      "##roved": 1637,
+      "##fications": 1638,
+      "##semb": 1639,
+      "stations": 1640,
+      "healthcare": 1641,
+      "contains": 1642,
+      "##ables": 1643,
+      "waterpro": 1644,
+      "##sions": 1645,
+      "presence": 1646,
+      "containers": 1647,
+      "uniform": 1648,
+      "excur": 1649,
+      "execution": 1650,
+      "handling": 1651,
+      "proofing": 1652,
+      "cuts": 1653,
+      "cutting": 1654,
+      "##ages": 1655,
+      "boards": 1656,
+      "##nect": 1657,
+      "gallons": 1658,
+      "browned": 1659,
+      "industrial": 1660,
+      "matches": 1661,
+      "veget": 1662,
+      "##mometers": 1663,
+      "intensi": 1664,
+      "permitted": 1665,
+      "thermometers": 1666,
+      "communic": 1667,
+      "shifts": 1668,
+      "rapidly": 1669,
+      "units": 1670,
+      "softened": 1671,
+      "approved": 1672,
+      "140": 1673,
+      "190": 1674,
+      "remaining": 1675,
+      "onions": 1676,
+      "labels": 1677,
+      "tomatoes": 1678,
+      "375": 1679,
+      "bandages": 1680,
+      "sear": 1681,
+      "separ": 1682,
+      "working": 1683,
+      "worcest": 1684,
+      "##ensils": 1685,
+      "properly": 1686,
+      "specified": 1687,
+      "specifications": 1688,
+      "exceed": 1689,
+      "except": 1690,
+      "above": 1691,
+      "batches": 1692,
+      "bulk": 1693,
+      "buildu": 1694,
+      "bowl": 1695,
+      "bake": 1696,
+      "carrots": 1697,
+      "dressing": 1698,
+      "dedicated": 1699,
+      "eggs": 1700,
+      "ferment": 1701,
+      "focus": 1702,
+      "grease": 1703,
+      "gather": 1704,
+      "hair": 1705,
+      "hidden": 1706,
+      "illness": 1707,
+      "jewelry": 1708,
+      "lockout": 1709,
+      "morning": 1710,
+      "malfunction": 1711,
+      "medium": 1712,
+      "pieces": 1713,
+      "principles": 1714,
+      "switching": 1715,
+      "simmer": 1716,
+      "seconds": 1717,
+      "sides": 1718,
+      "target": 1719,
+      "today": 1720,
+      "tagout": 1721,
+      "utensils": 1722,
+      "wedding": 1723,
+      "wounds": 1724,
+      "##ershire": 1725,
+      "projections": 1726,
+      "reassemb": 1727,
+      "returning": 1728,
+      "strict": 1729,
+      "concentration": 1730,
+      "connections": 1731,
+      "initials": 1732,
+      "personal": 1733,
+      "calibrated": 1734,
+      "thoroughly": 1735,
+      "loose": 1736,
+      "scoops": 1737,
+      "cleanliness": 1738,
+      "development": 1739,
+      "deglaze": 1740,
+      "department": 1741,
+      "debris": 1742,
+      "minimum": 1743,
+      "begins": 1744,
+      "particles": 1745,
+      "manufacturer": 1746,
+      "divide": 1747,
+      "adherence": 1748,
+      "disconnect": 1749,
+      "waterproof": 1750,
+      "excursions": 1751,
+      "vegetables": 1752,
+      "intensive": 1753,
+      "communicate": 1754,
+      "separate": 1755,
+      "worcestershire": 1756,
+      "buildup": 1757,
+      "malfunctions": 1758,
+      "reassemble": 1759
+    },
+    "merges": [
+      [
+        "##t",
+        "##i"
+      ],
+      [
+        "##o",
+        "##n"
+      ],
+      [
+        "##e",
+        "##r"
+      ],
+      [
+        "##e",
+        "##n"
+      ],
+      [
+        "##o",
+        "##r"
+      ],
+      [
+        "##ti",
+        "##on"
+      ],
+      [
+        "##r",
+        "##o"
+      ],
+      [
+        "##n",
+        "##d"
+      ],
+      [
+        "##r",
+        "##e"
+      ],
+      [
+        "##en",
+        "##t"
+      ],
+      [
+        "##i",
+        "##n"
+      ],
+      [
+        "##c",
+        "##e"
+      ],
+      [
+        "##a",
+        "##l"
+      ],
+      [
+        "##a",
+        "##tion"
+      ],
+      [
+        "c",
+        "##o"
+      ],
+      [
+        "##s",
+        "##t"
+      ],
+      [
+        "##m",
+        "##ent"
+      ],
+      [
+        "p",
+        "##ro"
+      ],
+      [
+        "o",
+        "##p"
+      ],
+      [
+        "##d",
+        "##u"
+      ],
+      [
+        "##c",
+        "##i"
+      ],
+      [
+        "##a",
+        "##n"
+      ],
+      [
+        "r",
+        "##e"
+      ],
+      [
+        "f",
+        "##or"
+      ],
+      [
+        "a",
+        "##nd"
+      ],
+      [
+        "##in",
+        "##g"
+      ],
+      [
+        "##a",
+        "##t"
+      ],
+      [
+        "##m",
+        "##p"
+      ],
+      [
+        "s",
+        "##t"
+      ],
+      [
+        "##u",
+        "##l"
+      ],
+      [
+        "##a",
+        "##r"
+      ],
+      [
+        "c",
+        "##on"
+      ],
+      [
+        "##l",
+        "##i"
+      ],
+      [
+        "##l",
+        "##e"
+      ],
+      [
+        "op",
+        "##er"
+      ],
+      [
+        "##i",
+        "##t"
+      ],
+      [
+        "##f",
+        "##f"
+      ],
+      [
+        "##h",
+        "##e"
+      ],
+      [
+        "pro",
+        "##ce"
+      ],
+      [
+        "proce",
+        "##du"
+      ],
+      [
+        "procedu",
+        "##re"
+      ],
+      [
+        "##p",
+        "##e"
+      ],
+      [
+        "co",
+        "##st"
+      ],
+      [
+        "##u",
+        "##i"
+      ],
+      [
+        "##o",
+        "##c"
+      ],
+      [
+        "##q",
+        "##ui"
+      ],
+      [
+        "##an",
+        "##ce"
+      ],
+      [
+        "##i",
+        "##z"
+      ],
+      [
+        "##e",
+        "##t"
+      ],
+      [
+        "##s",
+        "##i"
+      ],
+      [
+        "oper",
+        "##ation"
+      ],
+      [
+        "m",
+        "##on"
+      ],
+      [
+        "##it",
+        "##or"
+      ],
+      [
+        "mon",
+        "##itor"
+      ],
+      [
+        "##o",
+        "##l"
+      ],
+      [
+        "con",
+        "##t"
+      ],
+      [
+        "##r",
+        "##i"
+      ],
+      [
+        "##c",
+        "##tion"
+      ],
+      [
+        "i",
+        "##n"
+      ],
+      [
+        "st",
+        "##a"
+      ],
+      [
+        "i",
+        "##mp"
+      ],
+      [
+        "e",
+        "##ff"
+      ],
+      [
+        "##ro",
+        "##l"
+      ],
+      [
+        "cont",
+        "##rol"
+      ],
+      [
+        "p",
+        "##er"
+      ],
+      [
+        "##le",
+        "##ment"
+      ],
+      [
+        "imp",
+        "##lement"
+      ],
+      [
+        "##u",
+        "##re"
+      ],
+      [
+        "##ci",
+        "##pe"
+      ],
+      [
+        "re",
+        "##cipe"
+      ],
+      [
+        "##ti",
+        "##m"
+      ],
+      [
+        "op",
+        "##tim"
+      ],
+      [
+        "##e",
+        "##s"
+      ],
+      [
+        "##u",
+        "##r"
+      ],
+      [
+        "##g",
+        "##e"
+      ],
+      [
+        "t",
+        "##he"
+      ],
+      [
+        "optim",
+        "##iz"
+      ],
+      [
+        "##c",
+        "##y"
+      ],
+      [
+        "##en",
+        "##cy"
+      ],
+      [
+        "##i",
+        "##ci"
+      ],
+      [
+        "eff",
+        "##ici"
+      ],
+      [
+        "effici",
+        "##ency"
+      ],
+      [
+        "re",
+        "##qui"
+      ],
+      [
+        "requi",
+        "##re"
+      ],
+      [
+        "##u",
+        "##t"
+      ],
+      [
+        "##c",
+        "##h"
+      ],
+      [
+        "##ti",
+        "##n"
+      ],
+      [
+        "s",
+        "##er"
+      ],
+      [
+        "ser",
+        "##v"
+      ],
+      [
+        "co",
+        "##mp"
+      ],
+      [
+        "c",
+        "##a"
+      ],
+      [
+        "comp",
+        "##li"
+      ],
+      [
+        "compli",
+        "##ance"
+      ],
+      [
+        "pro",
+        "##du"
+      ],
+      [
+        "##a",
+        "##in"
+      ],
+      [
+        "##at",
+        "##e"
+      ],
+      [
+        "##tin",
+        "##g"
+      ],
+      [
+        "##at",
+        "##ch"
+      ],
+      [
+        "b",
+        "##atch"
+      ],
+      [
+        "##t",
+        "##s"
+      ],
+      [
+        "##o",
+        "##d"
+      ],
+      [
+        "##ar",
+        "##t"
+      ],
+      [
+        "##g",
+        "##h"
+      ],
+      [
+        "pro",
+        "##t"
+      ],
+      [
+        "##oc",
+        "##u"
+      ],
+      [
+        "d",
+        "##ocu"
+      ],
+      [
+        "docu",
+        "##ment"
+      ],
+      [
+        "c",
+        "##al"
+      ],
+      [
+        "##oc",
+        "##ol"
+      ],
+      [
+        "prot",
+        "##ocol"
+      ],
+      [
+        "##ar",
+        "##d"
+      ],
+      [
+        "t",
+        "##e"
+      ],
+      [
+        "##a",
+        "##ge"
+      ],
+      [
+        "##nd",
+        "##ard"
+      ],
+      [
+        "sta",
+        "##ndard"
+      ],
+      [
+        "##n",
+        "##al"
+      ],
+      [
+        "st",
+        "##art"
+      ],
+      [
+        "a",
+        "##nal"
+      ],
+      [
+        "##y",
+        "##si"
+      ],
+      [
+        "anal",
+        "##ysi"
+      ],
+      [
+        "analysi",
+        "##s"
+      ],
+      [
+        "optimiz",
+        "##ation"
+      ],
+      [
+        "##a",
+        "##ting"
+      ],
+      [
+        "t",
+        "##h"
+      ],
+      [
+        "te",
+        "##mp"
+      ],
+      [
+        "##e",
+        "##l"
+      ],
+      [
+        "##ri",
+        "##c"
+      ],
+      [
+        "##u",
+        "##gh"
+      ],
+      [
+        "##er",
+        "##at"
+      ],
+      [
+        "##p",
+        "##li"
+      ],
+      [
+        "co",
+        "##m"
+      ],
+      [
+        "oper",
+        "##ating"
+      ],
+      [
+        "##pli",
+        "##er"
+      ],
+      [
+        "##c",
+        "##ul"
+      ],
+      [
+        "##ro",
+        "##ugh"
+      ],
+      [
+        "th",
+        "##rough"
+      ],
+      [
+        "temp",
+        "##erat"
+      ],
+      [
+        "temperat",
+        "##ure"
+      ],
+      [
+        "##i",
+        "##ce"
+      ],
+      [
+        "produ",
+        "##ction"
+      ],
+      [
+        "cal",
+        "##cul"
+      ],
+      [
+        "##c",
+        "##al"
+      ],
+      [
+        "##p",
+        "##ment"
+      ],
+      [
+        "serv",
+        "##ice"
+      ],
+      [
+        "e",
+        "##qui"
+      ],
+      [
+        "equi",
+        "##pment"
+      ],
+      [
+        "##or",
+        "##y"
+      ],
+      [
+        "con",
+        "##si"
+      ],
+      [
+        "consi",
+        "##st"
+      ],
+      [
+        "##a",
+        "##s"
+      ],
+      [
+        "##a",
+        "##c"
+      ],
+      [
+        "consist",
+        "##ent"
+      ],
+      [
+        "##p",
+        "##a"
+      ],
+      [
+        "##f",
+        "##or"
+      ],
+      [
+        "m",
+        "##et"
+      ],
+      [
+        "##ric",
+        "##s"
+      ],
+      [
+        "met",
+        "##rics"
+      ],
+      [
+        "##v",
+        "##er"
+      ],
+      [
+        "##m",
+        "##er"
+      ],
+      [
+        "l",
+        "##o"
+      ],
+      [
+        "sta",
+        "##ff"
+      ],
+      [
+        "##a",
+        "##nd"
+      ],
+      [
+        "m",
+        "##ul"
+      ],
+      [
+        "##ti",
+        "##plier"
+      ],
+      [
+        "mul",
+        "##tiplier"
+      ],
+      [
+        "o",
+        "##f"
+      ],
+      [
+        "e",
+        "##nd"
+      ],
+      [
+        "##v",
+        "##e"
+      ],
+      [
+        "require",
+        "##ment"
+      ],
+      [
+        "p",
+        "##l"
+      ],
+      [
+        "lo",
+        "##g"
+      ],
+      [
+        "##ci",
+        "##al"
+      ],
+      [
+        "##t",
+        "##y"
+      ],
+      [
+        "com",
+        "##mer"
+      ],
+      [
+        "commer",
+        "##cial"
+      ],
+      [
+        "##z",
+        "##ation"
+      ],
+      [
+        "##ci",
+        "##ty"
+      ],
+      [
+        "ca",
+        "##pa"
+      ],
+      [
+        "capa",
+        "##city"
+      ],
+      [
+        "##st",
+        "##e"
+      ],
+      [
+        "in",
+        "##s"
+      ],
+      [
+        "o",
+        "##n"
+      ],
+      [
+        "##ti",
+        "##cal"
+      ],
+      [
+        "p",
+        "##o"
+      ],
+      [
+        "f",
+        "##o"
+      ],
+      [
+        "ins",
+        "##pe"
+      ],
+      [
+        "fo",
+        "##od"
+      ],
+      [
+        "s",
+        "##iz"
+      ],
+      [
+        "##u",
+        "##p"
+      ],
+      [
+        "inspe",
+        "##ction"
+      ],
+      [
+        "siz",
+        "##e"
+      ],
+      [
+        "c",
+        "##ri"
+      ],
+      [
+        "d",
+        "##ur"
+      ],
+      [
+        "cri",
+        "##tical"
+      ],
+      [
+        "dur",
+        "##ing"
+      ],
+      [
+        "q",
+        "##u"
+      ],
+      [
+        "s",
+        "##c"
+      ],
+      [
+        "##c",
+        "##ti"
+      ],
+      [
+        "##he",
+        "##du"
+      ],
+      [
+        "require",
+        "##s"
+      ],
+      [
+        "sc",
+        "##hedu"
+      ],
+      [
+        "pl",
+        "##an"
+      ],
+      [
+        "po",
+        "##in"
+      ],
+      [
+        "##n",
+        "##ing"
+      ],
+      [
+        "h",
+        "##ac"
+      ],
+      [
+        "##c",
+        "##p"
+      ],
+      [
+        "##c",
+        "##ent"
+      ],
+      [
+        "hac",
+        "##cp"
+      ],
+      [
+        "per",
+        "##cent"
+      ],
+      [
+        "requirement",
+        "##s"
+      ],
+      [
+        "schedu",
+        "##le"
+      ],
+      [
+        "plan",
+        "##ning"
+      ],
+      [
+        "percent",
+        "##age"
+      ],
+      [
+        "qu",
+        "##al"
+      ],
+      [
+        "calcul",
+        "##ation"
+      ],
+      [
+        "t",
+        "##r"
+      ],
+      [
+        "##for",
+        "##m"
+      ],
+      [
+        "##at",
+        "##ory"
+      ],
+      [
+        "per",
+        "##form"
+      ],
+      [
+        "perform",
+        "##ance"
+      ],
+      [
+        "e",
+        "##n"
+      ],
+      [
+        "##a",
+        "##m"
+      ],
+      [
+        "##it",
+        "##y"
+      ],
+      [
+        "r",
+        "##ate"
+      ],
+      [
+        "##o",
+        "##w"
+      ],
+      [
+        "##p",
+        "##ut"
+      ],
+      [
+        "through",
+        "##put"
+      ],
+      [
+        "u",
+        "##ti"
+      ],
+      [
+        "##li",
+        "##zation"
+      ],
+      [
+        "uti",
+        "##lization"
+      ],
+      [
+        "c",
+        "##le"
+      ],
+      [
+        "##i",
+        "##l"
+      ],
+      [
+        "##s",
+        "##ure"
+      ],
+      [
+        "t",
+        "##o"
+      ],
+      [
+        "##ver",
+        "##y"
+      ],
+      [
+        "##cti",
+        "##ve"
+      ],
+      [
+        "cle",
+        "##an"
+      ],
+      [
+        "implement",
+        "##ation"
+      ],
+      [
+        "qual",
+        "##ity"
+      ],
+      [
+        "##u",
+        "##st"
+      ],
+      [
+        "clean",
+        "##ing"
+      ],
+      [
+        "s",
+        "##a"
+      ],
+      [
+        "s",
+        "##y"
+      ],
+      [
+        "##ste",
+        "##m"
+      ],
+      [
+        "en",
+        "##sure"
+      ],
+      [
+        "sy",
+        "##stem"
+      ],
+      [
+        "ensure",
+        "##s"
+      ],
+      [
+        "p",
+        "##re"
+      ],
+      [
+        "operation",
+        "##s"
+      ],
+      [
+        "u",
+        "##s"
+      ],
+      [
+        "sa",
+        "##f"
+      ],
+      [
+        "##s",
+        "##ul"
+      ],
+      [
+        "##f",
+        "##ul"
+      ],
+      [
+        "##re",
+        "##ful"
+      ],
+      [
+        "re",
+        "##sul"
+      ],
+      [
+        "ca",
+        "##reful"
+      ],
+      [
+        "resul",
+        "##ts"
+      ],
+      [
+        "##k",
+        "##ing"
+      ],
+      [
+        "##ain",
+        "##t"
+      ],
+      [
+        "m",
+        "##aint"
+      ],
+      [
+        "tr",
+        "##ain"
+      ],
+      [
+        "##et",
+        "##y"
+      ],
+      [
+        "saf",
+        "##ety"
+      ],
+      [
+        "y",
+        "##i"
+      ],
+      [
+        "##el",
+        "##d"
+      ],
+      [
+        "yi",
+        "##eld"
+      ],
+      [
+        "##o",
+        "##ut"
+      ],
+      [
+        "in",
+        "##v"
+      ],
+      [
+        "##e",
+        "##d"
+      ],
+      [
+        "b",
+        "##as"
+      ],
+      [
+        "##g",
+        "##ul"
+      ],
+      [
+        "##nd",
+        "##er"
+      ],
+      [
+        "re",
+        "##gul"
+      ],
+      [
+        "procedure",
+        "##s"
+      ],
+      [
+        "##v",
+        "##en"
+      ],
+      [
+        "co",
+        "##o"
+      ],
+      [
+        "through",
+        "##out"
+      ],
+      [
+        "poin",
+        "##ts"
+      ],
+      [
+        "##o",
+        "##s"
+      ],
+      [
+        "c",
+        "##h"
+      ],
+      [
+        "e",
+        "##very"
+      ],
+      [
+        "u",
+        "##nder"
+      ],
+      [
+        "regul",
+        "##atory"
+      ],
+      [
+        "m",
+        "##ust"
+      ],
+      [
+        "##e",
+        "##ctive"
+      ],
+      [
+        "p",
+        "##ur"
+      ],
+      [
+        "##i",
+        "##od"
+      ],
+      [
+        "##p",
+        "##os"
+      ],
+      [
+        "##st",
+        "##and"
+      ],
+      [
+        "operation",
+        "##al"
+      ],
+      [
+        "eff",
+        "##ective"
+      ],
+      [
+        "per",
+        "##iod"
+      ],
+      [
+        "optimiz",
+        "##es"
+      ],
+      [
+        "under",
+        "##stand"
+      ],
+      [
+        "pur",
+        "##pos"
+      ],
+      [
+        "period",
+        "##s"
+      ],
+      [
+        "purpos",
+        "##es"
+      ],
+      [
+        "d",
+        "##e"
+      ],
+      [
+        "##ing",
+        "##s"
+      ],
+      [
+        "h",
+        "##o"
+      ],
+      [
+        "##i",
+        "##s"
+      ],
+      [
+        "##i",
+        "##ti"
+      ],
+      [
+        "p",
+        "##an"
+      ],
+      [
+        "##l",
+        "##l"
+      ],
+      [
+        "calcul",
+        "##ate"
+      ],
+      [
+        "##u",
+        "##n"
+      ],
+      [
+        "a",
+        "##ll"
+      ],
+      [
+        "##ent",
+        "##ory"
+      ],
+      [
+        "inv",
+        "##entory"
+      ],
+      [
+        "##u",
+        "##m"
+      ],
+      [
+        "##l",
+        "##ow"
+      ],
+      [
+        "##en",
+        "##ance"
+      ],
+      [
+        "maint",
+        "##enance"
+      ],
+      [
+        "f",
+        "##ol"
+      ],
+      [
+        "fol",
+        "##low"
+      ],
+      [
+        "1",
+        "##0"
+      ],
+      [
+        "s",
+        "##et"
+      ],
+      [
+        "start",
+        "##up"
+      ],
+      [
+        "coo",
+        "##king"
+      ],
+      [
+        "l",
+        "##ar"
+      ],
+      [
+        "lar",
+        "##ge"
+      ],
+      [
+        "s",
+        "##up"
+      ],
+      [
+        "m",
+        "##in"
+      ],
+      [
+        "o",
+        "##ven"
+      ],
+      [
+        "b",
+        "##e"
+      ],
+      [
+        "serv",
+        "##ings"
+      ],
+      [
+        "p",
+        "##ar"
+      ],
+      [
+        "us",
+        "##ing"
+      ],
+      [
+        "10",
+        "##0"
+      ],
+      [
+        "##ur",
+        "##s"
+      ],
+      [
+        "##b",
+        "##i"
+      ],
+      [
+        "##ut",
+        "##es"
+      ],
+      [
+        "min",
+        "##utes"
+      ],
+      [
+        "3",
+        "##0"
+      ],
+      [
+        "##s",
+        "##s"
+      ],
+      [
+        "p",
+        "##or"
+      ],
+      [
+        "##a",
+        "##il"
+      ],
+      [
+        "##for",
+        "##e"
+      ],
+      [
+        "be",
+        "##fore"
+      ],
+      [
+        "por",
+        "##tion"
+      ],
+      [
+        "com",
+        "##bi"
+      ],
+      [
+        "train",
+        "##ing"
+      ],
+      [
+        "c",
+        "##he"
+      ],
+      [
+        "d",
+        "##ail"
+      ],
+      [
+        "##i",
+        "##f"
+      ],
+      [
+        "dail",
+        "##y"
+      ],
+      [
+        "s",
+        "##cal"
+      ],
+      [
+        "##c",
+        "##t"
+      ],
+      [
+        "##c",
+        "##k"
+      ],
+      [
+        "##l",
+        "##y"
+      ],
+      [
+        "##e",
+        "##as"
+      ],
+      [
+        "bas",
+        "##e"
+      ],
+      [
+        "##ce",
+        "##s"
+      ],
+      [
+        "che",
+        "##ck"
+      ],
+      [
+        "a",
+        "##s"
+      ],
+      [
+        "b",
+        "##y"
+      ],
+      [
+        "m",
+        "##an"
+      ],
+      [
+        "l",
+        "##e"
+      ],
+      [
+        "st",
+        "##e"
+      ],
+      [
+        "##age",
+        "##ment"
+      ],
+      [
+        "man",
+        "##agement"
+      ],
+      [
+        "sup",
+        "##plier"
+      ],
+      [
+        "##i",
+        "##c"
+      ],
+      [
+        "poin",
+        "##t"
+      ],
+      [
+        "##c",
+        "##c"
+      ],
+      [
+        "##or",
+        "##age"
+      ],
+      [
+        "st",
+        "##orage"
+      ],
+      [
+        "ho",
+        "##t"
+      ],
+      [
+        "bas",
+        "##ed"
+      ],
+      [
+        "s",
+        "##an"
+      ],
+      [
+        "v",
+        "##ol"
+      ],
+      [
+        "##d",
+        "##i"
+      ],
+      [
+        "##v",
+        "##el"
+      ],
+      [
+        "##er",
+        "##g"
+      ],
+      [
+        "##um",
+        "##e"
+      ],
+      [
+        "san",
+        "##iti"
+      ],
+      [
+        "vol",
+        "##ume"
+      ],
+      [
+        "##i",
+        "##m"
+      ],
+      [
+        "le",
+        "##vel"
+      ],
+      [
+        "##a",
+        "##ste"
+      ],
+      [
+        "##or",
+        "##d"
+      ],
+      [
+        "t",
+        "##im"
+      ],
+      [
+        "pre",
+        "##p"
+      ],
+      [
+        "##ic",
+        "##ation"
+      ],
+      [
+        "s",
+        "##h"
+      ],
+      [
+        "ho",
+        "##urs"
+      ],
+      [
+        "##iti",
+        "##es"
+      ],
+      [
+        "all",
+        "##erg"
+      ],
+      [
+        "allerg",
+        "##en"
+      ],
+      [
+        "3",
+        "##2"
+      ],
+      [
+        "a",
+        "##t"
+      ],
+      [
+        "p",
+        "##ric"
+      ],
+      [
+        "##ro",
+        "##ss"
+      ],
+      [
+        "##in",
+        "##e"
+      ],
+      [
+        "hot",
+        "##el"
+      ],
+      [
+        "32",
+        "##5"
+      ],
+      [
+        "pric",
+        "##ing"
+      ],
+      [
+        "4",
+        "##0"
+      ],
+      [
+        "m",
+        "##and"
+      ],
+      [
+        "us",
+        "##e"
+      ],
+      [
+        "w",
+        "##aste"
+      ],
+      [
+        "##pa",
+        "##re"
+      ],
+      [
+        "pre",
+        "##pare"
+      ],
+      [
+        "##g",
+        "##re"
+      ],
+      [
+        "in",
+        "##gre"
+      ],
+      [
+        "##di",
+        "##ent"
+      ],
+      [
+        "ingre",
+        "##dient"
+      ],
+      [
+        "3",
+        "##5"
+      ],
+      [
+        "f",
+        "##l"
+      ],
+      [
+        "o",
+        "##ver"
+      ],
+      [
+        "log",
+        "##s"
+      ],
+      [
+        "pan",
+        "##s"
+      ],
+      [
+        "h",
+        "##as"
+      ],
+      [
+        "i",
+        "##s"
+      ],
+      [
+        "optim",
+        "##al"
+      ],
+      [
+        "saniti",
+        "##zation"
+      ],
+      [
+        "mand",
+        "##atory"
+      ],
+      [
+        "35",
+        "##0"
+      ],
+      [
+        "##i",
+        "##x"
+      ],
+      [
+        "##al",
+        "##l"
+      ],
+      [
+        "c",
+        "##or"
+      ],
+      [
+        "d",
+        "##i"
+      ],
+      [
+        "r",
+        "##a"
+      ],
+      [
+        "co",
+        "##ol"
+      ],
+      [
+        "cor",
+        "##re"
+      ],
+      [
+        "##e",
+        "##al"
+      ],
+      [
+        "##v",
+        "##i"
+      ],
+      [
+        "##il",
+        "##l"
+      ],
+      [
+        "c",
+        "##ross"
+      ],
+      [
+        "##o",
+        "##u"
+      ],
+      [
+        "##in",
+        "##ation"
+      ],
+      [
+        "cont",
+        "##am"
+      ],
+      [
+        "maint",
+        "##ain"
+      ],
+      [
+        "scal",
+        "##ing"
+      ],
+      [
+        "ste",
+        "##am"
+      ],
+      [
+        "contam",
+        "##ination"
+      ],
+      [
+        "m",
+        "##en"
+      ],
+      [
+        "r",
+        "##o"
+      ],
+      [
+        "##a",
+        "##st"
+      ],
+      [
+        "##u",
+        "##ation"
+      ],
+      [
+        "de",
+        "##li"
+      ],
+      [
+        "##ou",
+        "##s"
+      ],
+      [
+        "men",
+        "##u"
+      ],
+      [
+        "f",
+        "##in"
+      ],
+      [
+        "i",
+        "##m"
+      ],
+      [
+        "m",
+        "##ix"
+      ],
+      [
+        "##e",
+        "##c"
+      ],
+      [
+        "de",
+        "##vi"
+      ],
+      [
+        "m",
+        "##eas"
+      ],
+      [
+        "##l",
+        "##s"
+      ],
+      [
+        "##b",
+        "##er"
+      ],
+      [
+        "##oc",
+        "##k"
+      ],
+      [
+        "##et",
+        "##er"
+      ],
+      [
+        "##ure",
+        "##ment"
+      ],
+      [
+        "produ",
+        "##ct"
+      ],
+      [
+        "devi",
+        "##ation"
+      ],
+      [
+        "meas",
+        "##urement"
+      ],
+      [
+        "7",
+        "##5"
+      ],
+      [
+        "a",
+        "##ff"
+      ],
+      [
+        "a",
+        "##ction"
+      ],
+      [
+        "s",
+        "##eas"
+      ],
+      [
+        "##he",
+        "##d"
+      ],
+      [
+        "produ",
+        "##ces"
+      ],
+      [
+        "cal",
+        "##ls"
+      ],
+      [
+        "##ow",
+        "##s"
+      ],
+      [
+        "##is",
+        "##hed"
+      ],
+      [
+        "scal",
+        "##e"
+      ],
+      [
+        "sh",
+        "##ows"
+      ],
+      [
+        "over",
+        "##all"
+      ],
+      [
+        "di",
+        "##et"
+      ],
+      [
+        "ra",
+        "##w"
+      ],
+      [
+        "fin",
+        "##ished"
+      ],
+      [
+        "mix",
+        "##er"
+      ],
+      [
+        "##ec",
+        "##ts"
+      ],
+      [
+        "aff",
+        "##ects"
+      ],
+      [
+        "seas",
+        "##on"
+      ],
+      [
+        "a",
+        "##d"
+      ],
+      [
+        "b",
+        "##l"
+      ],
+      [
+        "d",
+        "##is"
+      ],
+      [
+        "n",
+        "##e"
+      ],
+      [
+        "##a",
+        "##k"
+      ],
+      [
+        "##ac",
+        "##king"
+      ],
+      [
+        "tr",
+        "##acking"
+      ],
+      [
+        "pre",
+        "##ven"
+      ],
+      [
+        "ch",
+        "##ill"
+      ],
+      [
+        "corre",
+        "##ctive"
+      ],
+      [
+        "bl",
+        "##ast"
+      ],
+      [
+        "preven",
+        "##tion"
+      ],
+      [
+        "a",
+        "##u"
+      ],
+      [
+        "b",
+        "##u"
+      ],
+      [
+        "p",
+        "##ri"
+      ],
+      [
+        "t",
+        "##ur"
+      ],
+      [
+        "v",
+        "##ar"
+      ],
+      [
+        "w",
+        "##h"
+      ],
+      [
+        "##o",
+        "##ver"
+      ],
+      [
+        "##o",
+        "##un"
+      ],
+      [
+        "##n",
+        "##over"
+      ],
+      [
+        "##t",
+        "##ation"
+      ],
+      [
+        "##i",
+        "##ance"
+      ],
+      [
+        "##i",
+        "##gh"
+      ],
+      [
+        "##d",
+        "##it"
+      ],
+      [
+        "##u",
+        "##ct"
+      ],
+      [
+        "##u",
+        "##ous"
+      ],
+      [
+        "##c",
+        "##oun"
+      ],
+      [
+        "con",
+        "##tin"
+      ],
+      [
+        "##el",
+        "##ine"
+      ],
+      [
+        "##cti",
+        "##v"
+      ],
+      [
+        "##ed",
+        "##i"
+      ],
+      [
+        "fl",
+        "##uct"
+      ],
+      [
+        "ro",
+        "##tation"
+      ],
+      [
+        "deli",
+        "##very"
+      ],
+      [
+        "season",
+        "##al"
+      ],
+      [
+        "au",
+        "##dit"
+      ],
+      [
+        "bu",
+        "##ff"
+      ],
+      [
+        "pri",
+        "##ce"
+      ],
+      [
+        "tur",
+        "##nover"
+      ],
+      [
+        "var",
+        "##iance"
+      ],
+      [
+        "contin",
+        "##uous"
+      ],
+      [
+        "fluct",
+        "##uation"
+      ],
+      [
+        "1",
+        "##5"
+      ],
+      [
+        "##t",
+        "##h"
+      ],
+      [
+        "##i",
+        "##r"
+      ],
+      [
+        "##m",
+        "##edi"
+      ],
+      [
+        "##it",
+        "##ch"
+      ],
+      [
+        "coo",
+        "##k"
+      ],
+      [
+        "im",
+        "##medi"
+      ],
+      [
+        "immedi",
+        "##ate"
+      ],
+      [
+        "f",
+        "##re"
+      ],
+      [
+        "k",
+        "##itch"
+      ],
+      [
+        "p",
+        "##e"
+      ],
+      [
+        "##p",
+        "##p"
+      ],
+      [
+        "##or",
+        "##t"
+      ],
+      [
+        "##li",
+        "##st"
+      ],
+      [
+        "check",
+        "##list"
+      ],
+      [
+        "wh",
+        "##en"
+      ],
+      [
+        "immediate",
+        "##ly"
+      ],
+      [
+        "fre",
+        "##e"
+      ],
+      [
+        "kitch",
+        "##en"
+      ],
+      [
+        "b",
+        "##r"
+      ],
+      [
+        "o",
+        "##cc"
+      ],
+      [
+        "w",
+        "##e"
+      ],
+      [
+        "w",
+        "##al"
+      ],
+      [
+        "##n",
+        "##ment"
+      ],
+      [
+        "##g",
+        "##i"
+      ],
+      [
+        "##g",
+        "##nment"
+      ],
+      [
+        "##si",
+        "##gnment"
+      ],
+      [
+        "as",
+        "##signment"
+      ],
+      [
+        "occ",
+        "##urs"
+      ],
+      [
+        "wal",
+        "##k"
+      ],
+      [
+        "a",
+        "##cc"
+      ],
+      [
+        "s",
+        "##al"
+      ],
+      [
+        "##r",
+        "##ate"
+      ],
+      [
+        "##a",
+        "##b"
+      ],
+      [
+        "##p",
+        "##ort"
+      ],
+      [
+        "##v",
+        "##es"
+      ],
+      [
+        "##ro",
+        "##ve"
+      ],
+      [
+        "##ord",
+        "##ing"
+      ],
+      [
+        "##eter",
+        "##s"
+      ],
+      [
+        "acc",
+        "##ording"
+      ],
+      [
+        "a",
+        "##ctiv"
+      ],
+      [
+        "f",
+        "##i"
+      ],
+      [
+        "f",
+        "##if"
+      ],
+      [
+        "##o",
+        "##ti"
+      ],
+      [
+        "##i",
+        "##v"
+      ],
+      [
+        "##g",
+        "##oti"
+      ],
+      [
+        "##p",
+        "##ly"
+      ],
+      [
+        "##m",
+        "##and"
+      ],
+      [
+        "##j",
+        "##ust"
+      ],
+      [
+        "##nd",
+        "##ings"
+      ],
+      [
+        "##ce",
+        "##iv"
+      ],
+      [
+        "##du",
+        "##ces"
+      ],
+      [
+        "re",
+        "##ceiv"
+      ],
+      [
+        "re",
+        "##duces"
+      ],
+      [
+        "st",
+        "##rate"
+      ],
+      [
+        "monitor",
+        "##ing"
+      ],
+      [
+        "imp",
+        "##rove"
+      ],
+      [
+        "qual",
+        "##if"
+      ],
+      [
+        "##am",
+        "##eters"
+      ],
+      [
+        "de",
+        "##mand"
+      ],
+      [
+        "sup",
+        "##ply"
+      ],
+      [
+        "par",
+        "##ameters"
+      ],
+      [
+        "tim",
+        "##eline"
+      ],
+      [
+        "ad",
+        "##just"
+      ],
+      [
+        "dis",
+        "##coun"
+      ],
+      [
+        "ne",
+        "##goti"
+      ],
+      [
+        "##igh",
+        "##t"
+      ],
+      [
+        "fluctuation",
+        "##s"
+      ],
+      [
+        "pe",
+        "##ak"
+      ],
+      [
+        "we",
+        "##ight"
+      ],
+      [
+        "##gi",
+        "##es"
+      ],
+      [
+        "activ",
+        "##ities"
+      ],
+      [
+        "fi",
+        "##ndings"
+      ],
+      [
+        "fif",
+        "##o"
+      ],
+      [
+        "receiv",
+        "##ing"
+      ],
+      [
+        "strate",
+        "##gies"
+      ],
+      [
+        "improve",
+        "##ment"
+      ],
+      [
+        "qualif",
+        "##ication"
+      ],
+      [
+        "discoun",
+        "##ts"
+      ],
+      [
+        "negoti",
+        "##ation"
+      ],
+      [
+        "##a",
+        "##is"
+      ],
+      [
+        "co",
+        "##un"
+      ],
+      [
+        "h",
+        "##ol"
+      ],
+      [
+        "##pp",
+        "##er"
+      ],
+      [
+        "hol",
+        "##d"
+      ],
+      [
+        "s",
+        "##p"
+      ],
+      [
+        "##f",
+        "##ication"
+      ],
+      [
+        "st",
+        "##ock"
+      ],
+      [
+        "##ir",
+        "##al"
+      ],
+      [
+        "sp",
+        "##iral"
+      ],
+      [
+        "c",
+        "##er"
+      ],
+      [
+        "t",
+        "##il"
+      ],
+      [
+        "u",
+        "##p"
+      ],
+      [
+        "##ti",
+        "##fication"
+      ],
+      [
+        "con",
+        "##ve"
+      ],
+      [
+        "tim",
+        "##e"
+      ],
+      [
+        "cool",
+        "##er"
+      ],
+      [
+        "chill",
+        "##er"
+      ],
+      [
+        "br",
+        "##ais"
+      ],
+      [
+        "cer",
+        "##tification"
+      ],
+      [
+        "til",
+        "##ting"
+      ],
+      [
+        "conve",
+        "##ction"
+      ],
+      [
+        "brais",
+        "##ing"
+      ],
+      [
+        "k",
+        "##et"
+      ],
+      [
+        "s",
+        "##he"
+      ],
+      [
+        "s",
+        "##eal"
+      ],
+      [
+        "v",
+        "##ac"
+      ],
+      [
+        "##o",
+        "##pper"
+      ],
+      [
+        "##t",
+        "##le"
+      ],
+      [
+        "##a",
+        "##mer"
+      ],
+      [
+        "##u",
+        "##um"
+      ],
+      [
+        "##al",
+        "##o"
+      ],
+      [
+        "op",
+        "##port"
+      ],
+      [
+        "##ol",
+        "##ves"
+      ],
+      [
+        "protocol",
+        "##s"
+      ],
+      [
+        "##and",
+        "##er"
+      ],
+      [
+        "##am",
+        "##ber"
+      ],
+      [
+        "##am",
+        "##ander"
+      ],
+      [
+        "inv",
+        "##olves"
+      ],
+      [
+        "ch",
+        "##ain"
+      ],
+      [
+        "ch",
+        "##opper"
+      ],
+      [
+        "ch",
+        "##amber"
+      ],
+      [
+        "##un",
+        "##ities"
+      ],
+      [
+        "ste",
+        "##amer"
+      ],
+      [
+        "buff",
+        "##alo"
+      ],
+      [
+        "sal",
+        "##amander"
+      ],
+      [
+        "ket",
+        "##tle"
+      ],
+      [
+        "seal",
+        "##er"
+      ],
+      [
+        "vac",
+        "##uum"
+      ],
+      [
+        "opport",
+        "##unities"
+      ],
+      [
+        "coun",
+        "##t"
+      ],
+      [
+        "##z",
+        "##er"
+      ],
+      [
+        "hold",
+        "##ing"
+      ],
+      [
+        "##s",
+        "##e"
+      ],
+      [
+        "##at",
+        "##er"
+      ],
+      [
+        "##ac",
+        "##t"
+      ],
+      [
+        "d",
+        "##ow"
+      ],
+      [
+        "s",
+        "##pe"
+      ],
+      [
+        "re",
+        "##ord"
+      ],
+      [
+        "dow",
+        "##n"
+      ],
+      [
+        "reord",
+        "##er"
+      ],
+      [
+        "c",
+        "##an"
+      ],
+      [
+        "##t",
+        "##er"
+      ],
+      [
+        "##u",
+        "##tion"
+      ],
+      [
+        "##r",
+        "##y"
+      ],
+      [
+        "##z",
+        "##e"
+      ],
+      [
+        "##an",
+        "##ge"
+      ],
+      [
+        "she",
+        "##et"
+      ],
+      [
+        "h",
+        "##eal"
+      ],
+      [
+        "st",
+        "##ation"
+      ],
+      [
+        "heal",
+        "##th"
+      ],
+      [
+        "b",
+        "##re"
+      ],
+      [
+        "l",
+        "##b"
+      ],
+      [
+        "##o",
+        "##f"
+      ],
+      [
+        "##d",
+        "##e"
+      ],
+      [
+        "free",
+        "##zer"
+      ],
+      [
+        "f",
+        "##act"
+      ],
+      [
+        "m",
+        "##ar"
+      ],
+      [
+        "w",
+        "##it"
+      ],
+      [
+        "##a",
+        "##d"
+      ],
+      [
+        "##f",
+        "##ri"
+      ],
+      [
+        "re",
+        "##fri"
+      ],
+      [
+        "##le",
+        "##d"
+      ],
+      [
+        "##iz",
+        "##ation"
+      ],
+      [
+        "control",
+        "##led"
+      ],
+      [
+        "pl",
+        "##ating"
+      ],
+      [
+        "schedule",
+        "##s"
+      ],
+      [
+        "cool",
+        "##ing"
+      ],
+      [
+        "fact",
+        "##or"
+      ],
+      [
+        "wit",
+        "##h"
+      ],
+      [
+        "refri",
+        "##g"
+      ],
+      [
+        "g",
+        "##l"
+      ],
+      [
+        "l",
+        "##ab"
+      ],
+      [
+        "w",
+        "##as"
+      ],
+      [
+        "was",
+        "##h"
+      ],
+      [
+        "n",
+        "##um"
+      ],
+      [
+        "ca",
+        "##se"
+      ],
+      [
+        "num",
+        "##ber"
+      ],
+      [
+        "o",
+        "##un"
+      ],
+      [
+        "##r",
+        "##am"
+      ],
+      [
+        "##l",
+        "##d"
+      ],
+      [
+        "co",
+        "##ld"
+      ],
+      [
+        "##ar",
+        "##y"
+      ],
+      [
+        "##ar",
+        "##ation"
+      ],
+      [
+        "cont",
+        "##ain"
+      ],
+      [
+        "lo",
+        "##ss"
+      ],
+      [
+        "qu",
+        "##art"
+      ],
+      [
+        "prep",
+        "##aration"
+      ],
+      [
+        "##ab",
+        "##le"
+      ],
+      [
+        "spe",
+        "##ed"
+      ],
+      [
+        "oun",
+        "##ce"
+      ],
+      [
+        "f",
+        "##ul"
+      ],
+      [
+        "g",
+        "##ross"
+      ],
+      [
+        "h",
+        "##al"
+      ],
+      [
+        "t",
+        "##able"
+      ],
+      [
+        "w",
+        "##ater"
+      ],
+      [
+        "##t",
+        "##ure"
+      ],
+      [
+        "##i",
+        "##e"
+      ],
+      [
+        "##g",
+        "##in"
+      ],
+      [
+        "##m",
+        "##b"
+      ],
+      [
+        "##x",
+        "##ture"
+      ],
+      [
+        "##ti",
+        "##c"
+      ],
+      [
+        "##ui",
+        "##d"
+      ],
+      [
+        "##si",
+        "##on"
+      ],
+      [
+        "te",
+        "##xture"
+      ],
+      [
+        "standard",
+        "##s"
+      ],
+      [
+        "pre",
+        "##s"
+      ],
+      [
+        "lb",
+        "##s"
+      ],
+      [
+        "lab",
+        "##or"
+      ],
+      [
+        "contain",
+        "##er"
+      ],
+      [
+        "ful",
+        "##l"
+      ],
+      [
+        "a",
+        "##ss"
+      ],
+      [
+        "f",
+        "##ry"
+      ],
+      [
+        "g",
+        "##ri"
+      ],
+      [
+        "l",
+        "##i"
+      ],
+      [
+        "m",
+        "##e"
+      ],
+      [
+        "r",
+        "##en"
+      ],
+      [
+        "r",
+        "##ange"
+      ],
+      [
+        "s",
+        "##li"
+      ],
+      [
+        "u",
+        "##n"
+      ],
+      [
+        "v",
+        "##i"
+      ],
+      [
+        "w",
+        "##el"
+      ],
+      [
+        "##i",
+        "##d"
+      ],
+      [
+        "##d",
+        "##a"
+      ],
+      [
+        "##g",
+        "##an"
+      ],
+      [
+        "##f",
+        "##it"
+      ],
+      [
+        "##u",
+        "##al"
+      ],
+      [
+        "##c",
+        "##er"
+      ],
+      [
+        "##on",
+        "##e"
+      ],
+      [
+        "co",
+        "##de"
+      ],
+      [
+        "pro",
+        "##fit"
+      ],
+      [
+        "##at",
+        "##or"
+      ],
+      [
+        "##qui",
+        "##d"
+      ],
+      [
+        "standard",
+        "##ization"
+      ],
+      [
+        "##erat",
+        "##or"
+      ],
+      [
+        "mar",
+        "##gin"
+      ],
+      [
+        "refrig",
+        "##erator"
+      ],
+      [
+        "pres",
+        "##sure"
+      ],
+      [
+        "fry",
+        "##er"
+      ],
+      [
+        "li",
+        "##quid"
+      ],
+      [
+        "sli",
+        "##cer"
+      ],
+      [
+        "wel",
+        "##l"
+      ],
+      [
+        "e",
+        "##x"
+      ],
+      [
+        "h",
+        "##and"
+      ],
+      [
+        "##o",
+        "##ve"
+      ],
+      [
+        "##a",
+        "##ch"
+      ],
+      [
+        "pro",
+        "##of"
+      ],
+      [
+        "bre",
+        "##ad"
+      ],
+      [
+        "c",
+        "##ut"
+      ],
+      [
+        "o",
+        "##r"
+      ],
+      [
+        "r",
+        "##in"
+      ],
+      [
+        "v",
+        "##er"
+      ],
+      [
+        "##o",
+        "##ugh"
+      ],
+      [
+        "##e",
+        "##w"
+      ],
+      [
+        "##a",
+        "##g"
+      ],
+      [
+        "##a",
+        "##ce"
+      ],
+      [
+        "pl",
+        "##ace"
+      ],
+      [
+        "ch",
+        "##ange"
+      ],
+      [
+        "rin",
+        "##se"
+      ],
+      [
+        "a",
+        "##re"
+      ],
+      [
+        "b",
+        "##o"
+      ],
+      [
+        "d",
+        "##ice"
+      ],
+      [
+        "d",
+        "##ry"
+      ],
+      [
+        "d",
+        "##ough"
+      ],
+      [
+        "g",
+        "##all"
+      ],
+      [
+        "h",
+        "##e"
+      ],
+      [
+        "m",
+        "##is"
+      ],
+      [
+        "s",
+        "##ol"
+      ],
+      [
+        "##n",
+        "##e"
+      ],
+      [
+        "##l",
+        "##ing"
+      ],
+      [
+        "##h",
+        "##er"
+      ],
+      [
+        "##c",
+        "##ord"
+      ],
+      [
+        "##an",
+        "##g"
+      ],
+      [
+        "re",
+        "##cord"
+      ],
+      [
+        "##es",
+        "##s"
+      ],
+      [
+        "serv",
+        "##ing"
+      ],
+      [
+        "te",
+        "##st"
+      ],
+      [
+        "temperature",
+        "##s"
+      ],
+      [
+        "cle",
+        "##ar"
+      ],
+      [
+        "saniti",
+        "##zer"
+      ],
+      [
+        "saniti",
+        "##ze"
+      ],
+      [
+        "diet",
+        "##ary"
+      ],
+      [
+        "she",
+        "##eter"
+      ],
+      [
+        "proof",
+        "##er"
+      ],
+      [
+        "gall",
+        "##on"
+      ],
+      [
+        "mis",
+        "##e"
+      ],
+      [
+        "sol",
+        "##ution"
+      ],
+      [
+        "2",
+        "##0"
+      ],
+      [
+        "b",
+        "##ro"
+      ],
+      [
+        "b",
+        "##ag"
+      ],
+      [
+        "d",
+        "##r"
+      ],
+      [
+        "e",
+        "##di"
+      ],
+      [
+        "g",
+        "##ram"
+      ],
+      [
+        "i",
+        "##nd"
+      ],
+      [
+        "k",
+        "##il"
+      ],
+      [
+        "l",
+        "##it"
+      ],
+      [
+        "m",
+        "##at"
+      ],
+      [
+        "m",
+        "##il"
+      ],
+      [
+        "n",
+        "##in"
+      ],
+      [
+        "n",
+        "##et"
+      ],
+      [
+        "p",
+        "##in"
+      ],
+      [
+        "s",
+        "##k"
+      ],
+      [
+        "s",
+        "##ix"
+      ],
+      [
+        "s",
+        "##of"
+      ],
+      [
+        "t",
+        "##on"
+      ],
+      [
+        "t",
+        "##ri"
+      ],
+      [
+        "t",
+        "##aste"
+      ],
+      [
+        "v",
+        "##e"
+      ],
+      [
+        "##o",
+        "##g"
+      ],
+      [
+        "##t",
+        "##ution"
+      ],
+      [
+        "##r",
+        "##in"
+      ],
+      [
+        "##i",
+        "##ed"
+      ],
+      [
+        "##e",
+        "##f"
+      ],
+      [
+        "##e",
+        "##ction"
+      ],
+      [
+        "##a",
+        "##y"
+      ],
+      [
+        "##a",
+        "##pe"
+      ],
+      [
+        "##p",
+        "##s"
+      ],
+      [
+        "##p",
+        "##ro"
+      ],
+      [
+        "##p",
+        "##id"
+      ],
+      [
+        "##m",
+        "##o"
+      ],
+      [
+        "##m",
+        "##it"
+      ],
+      [
+        "##u",
+        "##nd"
+      ],
+      [
+        "##b",
+        "##le"
+      ],
+      [
+        "##j",
+        "##ection"
+      ],
+      [
+        "##ti",
+        "##tution"
+      ],
+      [
+        "##ce",
+        "##d"
+      ],
+      [
+        "re",
+        "##port"
+      ],
+      [
+        "re",
+        "##ach"
+      ],
+      [
+        "##li",
+        "##li"
+      ],
+      [
+        "proce",
+        "##ss"
+      ],
+      [
+        "in",
+        "##t"
+      ],
+      [
+        "per",
+        "##mit"
+      ],
+      [
+        "##ut",
+        "##en"
+      ],
+      [
+        "##ain",
+        "##ed"
+      ],
+      [
+        "##ate",
+        "##d"
+      ],
+      [
+        "th",
+        "##er"
+      ],
+      [
+        "com",
+        "##m"
+      ],
+      [
+        "pl",
+        "##ate"
+      ],
+      [
+        "ins",
+        "##titution"
+      ],
+      [
+        "po",
+        "##und"
+      ],
+      [
+        "schedu",
+        "##ling"
+      ],
+      [
+        "##ed",
+        "##s"
+      ],
+      [
+        "all",
+        "##ow"
+      ],
+      [
+        "min",
+        "##ced"
+      ],
+      [
+        "be",
+        "##ef"
+      ],
+      [
+        "sh",
+        "##if"
+      ],
+      [
+        "ingredient",
+        "##s"
+      ],
+      [
+        "fl",
+        "##uid"
+      ],
+      [
+        "ra",
+        "##pid"
+      ],
+      [
+        "ne",
+        "##eds"
+      ],
+      [
+        "spe",
+        "##cial"
+      ],
+      [
+        "gl",
+        "##ove"
+      ],
+      [
+        "gl",
+        "##uten"
+      ],
+      [
+        "wash",
+        "##ing"
+      ],
+      [
+        "quart",
+        "##er"
+      ],
+      [
+        "hal",
+        "##f"
+      ],
+      [
+        "un",
+        "##it"
+      ],
+      [
+        "bo",
+        "##x"
+      ],
+      [
+        "dice",
+        "##d"
+      ],
+      [
+        "dr",
+        "##ained"
+      ],
+      [
+        "edi",
+        "##ble"
+      ],
+      [
+        "kil",
+        "##og"
+      ],
+      [
+        "lit",
+        "##er"
+      ],
+      [
+        "mil",
+        "##lili"
+      ],
+      [
+        "nin",
+        "##th"
+      ],
+      [
+        "pin",
+        "##t"
+      ],
+      [
+        "sk",
+        "##ill"
+      ],
+      [
+        "six",
+        "##th"
+      ],
+      [
+        "sof",
+        "##t"
+      ],
+      [
+        "tri",
+        "##m"
+      ],
+      [
+        "institution",
+        "##al"
+      ],
+      [
+        "kilog",
+        "##ram"
+      ],
+      [
+        "millili",
+        "##ter"
+      ],
+      [
+        "1",
+        "##6"
+      ],
+      [
+        "2",
+        "##5"
+      ],
+      [
+        "a",
+        "##pp"
+      ],
+      [
+        "b",
+        "##in"
+      ],
+      [
+        "b",
+        "##one"
+      ],
+      [
+        "c",
+        "##y"
+      ],
+      [
+        "c",
+        "##ir"
+      ],
+      [
+        "c",
+        "##ater"
+      ],
+      [
+        "d",
+        "##ang"
+      ],
+      [
+        "e",
+        "##v"
+      ],
+      [
+        "e",
+        "##ven"
+      ],
+      [
+        "f",
+        "##ro"
+      ],
+      [
+        "f",
+        "##da"
+      ],
+      [
+        "g",
+        "##r"
+      ],
+      [
+        "g",
+        "##u"
+      ],
+      [
+        "g",
+        "##mp"
+      ],
+      [
+        "g",
+        "##uid"
+      ],
+      [
+        "h",
+        "##igh"
+      ],
+      [
+        "k",
+        "##os"
+      ],
+      [
+        "l",
+        "##oc"
+      ],
+      [
+        "l",
+        "##if"
+      ],
+      [
+        "l",
+        "##ine"
+      ],
+      [
+        "m",
+        "##atch"
+      ],
+      [
+        "m",
+        "##od"
+      ],
+      [
+        "n",
+        "##ut"
+      ],
+      [
+        "o",
+        "##z"
+      ],
+      [
+        "p",
+        "##iz"
+      ],
+      [
+        "p",
+        "##ure"
+      ],
+      [
+        "r",
+        "##un"
+      ],
+      [
+        "r",
+        "##ail"
+      ],
+      [
+        "s",
+        "##q"
+      ],
+      [
+        "s",
+        "##od"
+      ],
+      [
+        "s",
+        "##ous"
+      ],
+      [
+        "s",
+        "##ne"
+      ],
+      [
+        "s",
+        "##mo"
+      ],
+      [
+        "t",
+        "##w"
+      ],
+      [
+        "t",
+        "##es"
+      ],
+      [
+        "v",
+        "##en"
+      ],
+      [
+        "v",
+        "##is"
+      ],
+      [
+        "w",
+        "##o"
+      ],
+      [
+        "z",
+        "##one"
+      ],
+      [
+        "##o",
+        "##ice"
+      ],
+      [
+        "##t",
+        "##al"
+      ],
+      [
+        "##t",
+        "##ual"
+      ],
+      [
+        "##r",
+        "##al"
+      ],
+      [
+        "##r",
+        "##up"
+      ],
+      [
+        "##r",
+        "##act"
+      ],
+      [
+        "##r",
+        "##ator"
+      ],
+      [
+        "##l",
+        "##en"
+      ],
+      [
+        "##i",
+        "##cal"
+      ],
+      [
+        "##i",
+        "##um"
+      ],
+      [
+        "##i",
+        "##ck"
+      ],
+      [
+        "##z",
+        "##a"
+      ],
+      [
+        "##z",
+        "##en"
+      ],
+      [
+        "##e",
+        "##in"
+      ],
+      [
+        "##e",
+        "##ze"
+      ],
+      [
+        "##e",
+        "##mb"
+      ],
+      [
+        "##e",
+        "##tic"
+      ],
+      [
+        "##s",
+        "##a"
+      ],
+      [
+        "##s",
+        "##u"
+      ],
+      [
+        "##s",
+        "##ting"
+      ],
+      [
+        "##d",
+        "##or"
+      ],
+      [
+        "##d",
+        "##ate"
+      ],
+      [
+        "##d",
+        "##rator"
+      ],
+      [
+        "##a",
+        "##w"
+      ],
+      [
+        "##a",
+        "##bi"
+      ],
+      [
+        "##g",
+        "##ine"
+      ],
+      [
+        "##f",
+        "##e"
+      ],
+      [
+        "##p",
+        "##len"
+      ],
+      [
+        "##m",
+        "##al"
+      ],
+      [
+        "##h",
+        "##y"
+      ],
+      [
+        "##h",
+        "##ment"
+      ],
+      [
+        "##u",
+        "##ction"
+      ],
+      [
+        "##u",
+        "##tic"
+      ],
+      [
+        "##c",
+        "##le"
+      ],
+      [
+        "##c",
+        "##king"
+      ],
+      [
+        "##x",
+        "##an"
+      ],
+      [
+        "##b",
+        "##in"
+      ],
+      [
+        "##b",
+        "##ution"
+      ],
+      [
+        "##k",
+        "##et"
+      ],
+      [
+        "##k",
+        "##age"
+      ],
+      [
+        "##ti",
+        "##ss"
+      ],
+      [
+        "##er",
+        "##ing"
+      ],
+      [
+        "##er",
+        "##ie"
+      ],
+      [
+        "##er",
+        "##ated"
+      ],
+      [
+        "##er",
+        "##mal"
+      ],
+      [
+        "##or",
+        "##ie"
+      ],
+      [
+        "##tion",
+        "##al"
+      ],
+      [
+        "##al",
+        "##uation"
+      ],
+      [
+        "co",
+        "##sting"
+      ],
+      [
+        "##st",
+        "##ock"
+      ],
+      [
+        "##du",
+        "##ction"
+      ],
+      [
+        "##an",
+        "##ical"
+      ],
+      [
+        "re",
+        "##he"
+      ],
+      [
+        "re",
+        "##th"
+      ],
+      [
+        "re",
+        "##plen"
+      ],
+      [
+        "##mp",
+        "##tion"
+      ],
+      [
+        "st",
+        "##ri"
+      ],
+      [
+        "con",
+        "##ver"
+      ],
+      [
+        "con",
+        "##su"
+      ],
+      [
+        "##li",
+        "##ty"
+      ],
+      [
+        "procedu",
+        "##ral"
+      ],
+      [
+        "##pe",
+        "##di"
+      ],
+      [
+        "##pe",
+        "##tual"
+      ],
+      [
+        "##et",
+        "##ency"
+      ],
+      [
+        "##et",
+        "##ary"
+      ],
+      [
+        "##ol",
+        "##ation"
+      ],
+      [
+        "##ol",
+        "##ine"
+      ],
+      [
+        "cont",
+        "##ri"
+      ],
+      [
+        "cont",
+        "##ract"
+      ],
+      [
+        "##ri",
+        "##x"
+      ],
+      [
+        "##ri",
+        "##tional"
+      ],
+      [
+        "in",
+        "##jection"
+      ],
+      [
+        "sta",
+        "##ge"
+      ],
+      [
+        "per",
+        "##petual"
+      ],
+      [
+        "##es",
+        "##e"
+      ],
+      [
+        "##ch",
+        "##anical"
+      ],
+      [
+        "serv",
+        "##sa"
+      ],
+      [
+        "comp",
+        "##etency"
+      ],
+      [
+        "ca",
+        "##mb"
+      ],
+      [
+        "ca",
+        "##bin"
+      ],
+      [
+        "produ",
+        "##ctiv"
+      ],
+      [
+        "##od",
+        "##ity"
+      ],
+      [
+        "prot",
+        "##ein"
+      ],
+      [
+        "document",
+        "##ation"
+      ],
+      [
+        "cal",
+        "##orie"
+      ],
+      [
+        "th",
+        "##aw"
+      ],
+      [
+        "##el",
+        "##y"
+      ],
+      [
+        "##cul",
+        "##ator"
+      ],
+      [
+        "consist",
+        "##ency"
+      ],
+      [
+        "##mer",
+        "##sion"
+      ],
+      [
+        "lo",
+        "##w"
+      ],
+      [
+        "po",
+        "##t"
+      ],
+      [
+        "plan",
+        "##etary"
+      ],
+      [
+        "en",
+        "##erg"
+      ],
+      [
+        "en",
+        "##gine"
+      ],
+      [
+        "##il",
+        "##er"
+      ],
+      [
+        "to",
+        "##p"
+      ],
+      [
+        "to",
+        "##tal"
+      ],
+      [
+        "sa",
+        "##w"
+      ],
+      [
+        "us",
+        "##age"
+      ],
+      [
+        "us",
+        "##da"
+      ],
+      [
+        "saf",
+        "##ely"
+      ],
+      [
+        "inv",
+        "##oice"
+      ],
+      [
+        "regul",
+        "##ation"
+      ],
+      [
+        "ch",
+        "##ar"
+      ],
+      [
+        "ch",
+        "##ick"
+      ],
+      [
+        "under",
+        "##coun"
+      ],
+      [
+        "de",
+        "##ad"
+      ],
+      [
+        "de",
+        "##hy"
+      ],
+      [
+        "##is",
+        "##hment"
+      ],
+      [
+        "set",
+        "##up"
+      ],
+      [
+        "che",
+        "##cking"
+      ],
+      [
+        "che",
+        "##ese"
+      ],
+      [
+        "##if",
+        "##ied"
+      ],
+      [
+        "le",
+        "##xan"
+      ],
+      [
+        "sh",
+        "##ock"
+      ],
+      [
+        "sh",
+        "##rin"
+      ],
+      [
+        "mand",
+        "##oline"
+      ],
+      [
+        "fl",
+        "##at"
+      ],
+      [
+        "over",
+        "##pro"
+      ],
+      [
+        "over",
+        "##stock"
+      ],
+      [
+        "di",
+        "##ab"
+      ],
+      [
+        "corre",
+        "##ction"
+      ],
+      [
+        "ro",
+        "##tiss"
+      ],
+      [
+        "im",
+        "##mersion"
+      ],
+      [
+        "ad",
+        "##d"
+      ],
+      [
+        "dis",
+        "##rup"
+      ],
+      [
+        "chill",
+        "##ing"
+      ],
+      [
+        "buff",
+        "##er"
+      ],
+      [
+        "buff",
+        "##et"
+      ],
+      [
+        "free",
+        "##ze"
+      ],
+      [
+        "br",
+        "##c"
+      ],
+      [
+        "sal",
+        "##t"
+      ],
+      [
+        "coun",
+        "##ting"
+      ],
+      [
+        "stock",
+        "##out"
+      ],
+      [
+        "up",
+        "##date"
+      ],
+      [
+        "health",
+        "##y"
+      ],
+      [
+        "bre",
+        "##ak"
+      ],
+      [
+        "mar",
+        "##ket"
+      ],
+      [
+        "refrig",
+        "##erated"
+      ],
+      [
+        "hal",
+        "##al"
+      ],
+      [
+        "ass",
+        "##ess"
+      ],
+      [
+        "ass",
+        "##emb"
+      ],
+      [
+        "gri",
+        "##nder"
+      ],
+      [
+        "gri",
+        "##ll"
+      ],
+      [
+        "me",
+        "##at"
+      ],
+      [
+        "me",
+        "##chanical"
+      ],
+      [
+        "ren",
+        "##al"
+      ],
+      [
+        "ren",
+        "##ew"
+      ],
+      [
+        "vi",
+        "##de"
+      ],
+      [
+        "vi",
+        "##olation"
+      ],
+      [
+        "##gan",
+        "##ic"
+      ],
+      [
+        "profit",
+        "##abi"
+      ],
+      [
+        "ex",
+        "##pedi"
+      ],
+      [
+        "cut",
+        "##ter"
+      ],
+      [
+        "or",
+        "##ganic"
+      ],
+      [
+        "ver",
+        "##tical"
+      ],
+      [
+        "are",
+        "##a"
+      ],
+      [
+        "he",
+        "##art"
+      ],
+      [
+        "bro",
+        "##iler"
+      ],
+      [
+        "ind",
+        "##uction"
+      ],
+      [
+        "mat",
+        "##rix"
+      ],
+      [
+        "ve",
+        "##gan"
+      ],
+      [
+        "##ape",
+        "##utic"
+      ],
+      [
+        "process",
+        "##or"
+      ],
+      [
+        "int",
+        "##o"
+      ],
+      [
+        "ther",
+        "##apeutic"
+      ],
+      [
+        "comm",
+        "##odity"
+      ],
+      [
+        "allow",
+        "##ance"
+      ],
+      [
+        "shif",
+        "##t"
+      ],
+      [
+        "cy",
+        "##cle"
+      ],
+      [
+        "cir",
+        "##culator"
+      ],
+      [
+        "cater",
+        "##ing"
+      ],
+      [
+        "dang",
+        "##er"
+      ],
+      [
+        "ev",
+        "##aluation"
+      ],
+      [
+        "fro",
+        "##zen"
+      ],
+      [
+        "gr",
+        "##ater"
+      ],
+      [
+        "gu",
+        "##ard"
+      ],
+      [
+        "guid",
+        "##eline"
+      ],
+      [
+        "kos",
+        "##her"
+      ],
+      [
+        "loc",
+        "##al"
+      ],
+      [
+        "lif",
+        "##e"
+      ],
+      [
+        "match",
+        "##ing"
+      ],
+      [
+        "mod",
+        "##ified"
+      ],
+      [
+        "nut",
+        "##ritional"
+      ],
+      [
+        "piz",
+        "##za"
+      ],
+      [
+        "pure",
+        "##ed"
+      ],
+      [
+        "sq",
+        "##f"
+      ],
+      [
+        "sod",
+        "##ium"
+      ],
+      [
+        "sne",
+        "##eze"
+      ],
+      [
+        "smo",
+        "##king"
+      ],
+      [
+        "tw",
+        "##o"
+      ],
+      [
+        "tes",
+        "##ting"
+      ],
+      [
+        "ven",
+        "##dor"
+      ],
+      [
+        "vis",
+        "##ual"
+      ],
+      [
+        "wo",
+        "##k"
+      ],
+      [
+        "##ermal",
+        "##ization"
+      ],
+      [
+        "rehe",
+        "##at"
+      ],
+      [
+        "reth",
+        "##ermalization"
+      ],
+      [
+        "replen",
+        "##ishment"
+      ],
+      [
+        "stri",
+        "##ps"
+      ],
+      [
+        "conver",
+        "##sion"
+      ],
+      [
+        "consu",
+        "##mption"
+      ],
+      [
+        "contri",
+        "##bution"
+      ],
+      [
+        "servsa",
+        "##fe"
+      ],
+      [
+        "camb",
+        "##ro"
+      ],
+      [
+        "cabin",
+        "##et"
+      ],
+      [
+        "productiv",
+        "##ity"
+      ],
+      [
+        "energ",
+        "##y"
+      ],
+      [
+        "engine",
+        "##ering"
+      ],
+      [
+        "chick",
+        "##en"
+      ],
+      [
+        "undercoun",
+        "##ter"
+      ],
+      [
+        "dehy",
+        "##drator"
+      ],
+      [
+        "shrin",
+        "##kage"
+      ],
+      [
+        "overpro",
+        "##duction"
+      ],
+      [
+        "diab",
+        "##etic"
+      ],
+      [
+        "rotiss",
+        "##erie"
+      ],
+      [
+        "disrup",
+        "##tion"
+      ],
+      [
+        "assess",
+        "##ment"
+      ],
+      [
+        "assemb",
+        "##ly"
+      ],
+      [
+        "renew",
+        "##al"
+      ],
+      [
+        "profitabi",
+        "##lity"
+      ],
+      [
+        "expedi",
+        "##ting"
+      ],
+      [
+        "1",
+        "##4"
+      ],
+      [
+        "1",
+        "##9"
+      ],
+      [
+        "1",
+        "##2"
+      ],
+      [
+        "5",
+        "##0"
+      ],
+      [
+        "##a",
+        "##ves"
+      ],
+      [
+        "1",
+        "##3"
+      ],
+      [
+        "1",
+        "##7"
+      ],
+      [
+        "1",
+        "##8"
+      ],
+      [
+        "1",
+        "##1"
+      ],
+      [
+        "2",
+        "##3"
+      ],
+      [
+        "2",
+        "##4"
+      ],
+      [
+        "2",
+        "##7"
+      ],
+      [
+        "2",
+        "##8"
+      ],
+      [
+        "2",
+        "##9"
+      ],
+      [
+        "2",
+        "##2"
+      ],
+      [
+        "2",
+        "##1"
+      ],
+      [
+        "2",
+        "##6"
+      ],
+      [
+        "b",
+        "##et"
+      ],
+      [
+        "c",
+        "##el"
+      ],
+      [
+        "e",
+        "##ach"
+      ],
+      [
+        "m",
+        "##ay"
+      ],
+      [
+        "t",
+        "##as"
+      ],
+      [
+        "##n",
+        "##ais"
+      ],
+      [
+        "##i",
+        "##on"
+      ],
+      [
+        "##e",
+        "##en"
+      ],
+      [
+        "##m",
+        "##at"
+      ],
+      [
+        "##u",
+        "##b"
+      ],
+      [
+        "##w",
+        "##een"
+      ],
+      [
+        "##k",
+        "##s"
+      ],
+      [
+        "##ti",
+        "##l"
+      ],
+      [
+        "##on",
+        "##nais"
+      ],
+      [
+        "##er",
+        "##y"
+      ],
+      [
+        "##en",
+        "##ing"
+      ],
+      [
+        "re",
+        "##m"
+      ],
+      [
+        "in",
+        "##ter"
+      ],
+      [
+        "require",
+        "##d"
+      ],
+      [
+        "lo",
+        "##aves"
+      ],
+      [
+        "on",
+        "##ion"
+      ],
+      [
+        "to",
+        "##mat"
+      ],
+      [
+        "saf",
+        "##e"
+      ],
+      [
+        "##un",
+        "##ction"
+      ],
+      [
+        "##if",
+        "##y"
+      ],
+      [
+        "pe",
+        "##pper"
+      ],
+      [
+        "lab",
+        "##el"
+      ],
+      [
+        "un",
+        "##til"
+      ],
+      [
+        "ver",
+        "##ify"
+      ],
+      [
+        "bet",
+        "##ween"
+      ],
+      [
+        "cel",
+        "##ery"
+      ],
+      [
+        "may",
+        "##onnais"
+      ],
+      [
+        "tas",
+        "##ks"
+      ],
+      [
+        "inter",
+        "##nal"
+      ],
+      [
+        "tomat",
+        "##o"
+      ],
+      [
+        "mayonnais",
+        "##e"
+      ],
+      [
+        "3",
+        "##7"
+      ],
+      [
+        "4",
+        "##5"
+      ],
+      [
+        "8",
+        "##5"
+      ],
+      [
+        "a",
+        "##n"
+      ],
+      [
+        "a",
+        "##l"
+      ],
+      [
+        "b",
+        "##el"
+      ],
+      [
+        "b",
+        "##and"
+      ],
+      [
+        "c",
+        "##ub"
+      ],
+      [
+        "f",
+        "##unction"
+      ],
+      [
+        "h",
+        "##y"
+      ],
+      [
+        "h",
+        "##um"
+      ],
+      [
+        "i",
+        "##f"
+      ],
+      [
+        "j",
+        "##ui"
+      ],
+      [
+        "p",
+        "##aste"
+      ],
+      [
+        "r",
+        "##ang"
+      ],
+      [
+        "s",
+        "##o"
+      ],
+      [
+        "s",
+        "##e"
+      ],
+      [
+        "s",
+        "##u"
+      ],
+      [
+        "s",
+        "##ur"
+      ],
+      [
+        "t",
+        "##b"
+      ],
+      [
+        "w",
+        "##or"
+      ],
+      [
+        "w",
+        "##ar"
+      ],
+      [
+        "y",
+        "##e"
+      ],
+      [
+        "y",
+        "##el"
+      ],
+      [
+        "##o",
+        "##ur"
+      ],
+      [
+        "##o",
+        "##ves"
+      ],
+      [
+        "##s",
+        "##f"
+      ],
+      [
+        "##s",
+        "##p"
+      ],
+      [
+        "##a",
+        "##p"
+      ],
+      [
+        "##a",
+        "##ces"
+      ],
+      [
+        "##g",
+        "##ar"
+      ],
+      [
+        "##g",
+        "##et"
+      ],
+      [
+        "##f",
+        "##aces"
+      ],
+      [
+        "##p",
+        "##er"
+      ],
+      [
+        "##p",
+        "##ri"
+      ],
+      [
+        "##m",
+        "##on"
+      ],
+      [
+        "##c",
+        "##he"
+      ],
+      [
+        "##b",
+        "##ine"
+      ],
+      [
+        "##er",
+        "##t"
+      ],
+      [
+        "##en",
+        "##e"
+      ],
+      [
+        "##en",
+        "##ce"
+      ],
+      [
+        "##en",
+        "##si"
+      ],
+      [
+        "##ro",
+        "##pri"
+      ],
+      [
+        "pro",
+        "##per"
+      ],
+      [
+        "##an",
+        "##sf"
+      ],
+      [
+        "re",
+        "##vi"
+      ],
+      [
+        "##le",
+        "##s"
+      ],
+      [
+        "##it",
+        "##e"
+      ],
+      [
+        "##ol",
+        "##s"
+      ],
+      [
+        "in",
+        "##ch"
+      ],
+      [
+        "in",
+        "##form"
+      ],
+      [
+        "com",
+        "##bine"
+      ],
+      [
+        "tr",
+        "##ansf"
+      ],
+      [
+        "to",
+        "##ols"
+      ],
+      [
+        "ho",
+        "##ur"
+      ],
+      [
+        "portion",
+        "##s"
+      ],
+      [
+        "le",
+        "##mon"
+      ],
+      [
+        "level",
+        "##s"
+      ],
+      [
+        "sh",
+        "##ort"
+      ],
+      [
+        "fl",
+        "##our"
+      ],
+      [
+        "corre",
+        "##ct"
+      ],
+      [
+        "fin",
+        "##al"
+      ],
+      [
+        "wh",
+        "##ite"
+      ],
+      [
+        "we",
+        "##ar"
+      ],
+      [
+        "##gi",
+        "##ene"
+      ],
+      [
+        "spe",
+        "##ci"
+      ],
+      [
+        "bre",
+        "##ast"
+      ],
+      [
+        "with",
+        "##in"
+      ],
+      [
+        "gl",
+        "##oves"
+      ],
+      [
+        "##id",
+        "##ity"
+      ],
+      [
+        "ex",
+        "##ce"
+      ],
+      [
+        "hand",
+        "##s"
+      ],
+      [
+        "are",
+        "##as"
+      ],
+      [
+        "he",
+        "##at"
+      ],
+      [
+        "clear",
+        "##ly"
+      ],
+      [
+        "20",
+        "##0"
+      ],
+      [
+        "16",
+        "##5"
+      ],
+      [
+        "app",
+        "##ly"
+      ],
+      [
+        "app",
+        "##ropri"
+      ],
+      [
+        "rem",
+        "##ove"
+      ],
+      [
+        "an",
+        "##y"
+      ],
+      [
+        "al",
+        "##ert"
+      ],
+      [
+        "bel",
+        "##ow"
+      ],
+      [
+        "cub",
+        "##es"
+      ],
+      [
+        "hy",
+        "##giene"
+      ],
+      [
+        "hum",
+        "##idity"
+      ],
+      [
+        "jui",
+        "##ce"
+      ],
+      [
+        "rang",
+        "##es"
+      ],
+      [
+        "so",
+        "##ap"
+      ],
+      [
+        "su",
+        "##gar"
+      ],
+      [
+        "sur",
+        "##faces"
+      ],
+      [
+        "tb",
+        "##sp"
+      ],
+      [
+        "war",
+        "##m"
+      ],
+      [
+        "ye",
+        "##ast"
+      ],
+      [
+        "yel",
+        "##low"
+      ],
+      [
+        "##che",
+        "##s"
+      ],
+      [
+        "revi",
+        "##ew"
+      ],
+      [
+        "inform",
+        "##ation"
+      ],
+      [
+        "transf",
+        "##er"
+      ],
+      [
+        "short",
+        "##ening"
+      ],
+      [
+        "appropri",
+        "##ate"
+      ],
+      [
+        "3",
+        "##3"
+      ],
+      [
+        "3",
+        "##4"
+      ],
+      [
+        "3",
+        "##8"
+      ],
+      [
+        "3",
+        "##9"
+      ],
+      [
+        "3",
+        "##1"
+      ],
+      [
+        "3",
+        "##6"
+      ],
+      [
+        "4",
+        "##3"
+      ],
+      [
+        "4",
+        "##4"
+      ],
+      [
+        "4",
+        "##7"
+      ],
+      [
+        "4",
+        "##8"
+      ],
+      [
+        "4",
+        "##9"
+      ],
+      [
+        "4",
+        "##2"
+      ],
+      [
+        "4",
+        "##1"
+      ],
+      [
+        "4",
+        "##6"
+      ],
+      [
+        "7",
+        "##8"
+      ],
+      [
+        "8",
+        "##0"
+      ],
+      [
+        "a",
+        "##b"
+      ],
+      [
+        "a",
+        "##ctive"
+      ],
+      [
+        "a",
+        "##ir"
+      ],
+      [
+        "b",
+        "##at"
+      ],
+      [
+        "b",
+        "##ul"
+      ],
+      [
+        "b",
+        "##ui"
+      ],
+      [
+        "b",
+        "##ow"
+      ],
+      [
+        "b",
+        "##ak"
+      ],
+      [
+        "b",
+        "##ay"
+      ],
+      [
+        "c",
+        "##ar"
+      ],
+      [
+        "c",
+        "##up"
+      ],
+      [
+        "d",
+        "##re"
+      ],
+      [
+        "d",
+        "##ate"
+      ],
+      [
+        "d",
+        "##ed"
+      ],
+      [
+        "d",
+        "##ay"
+      ],
+      [
+        "e",
+        "##g"
+      ],
+      [
+        "f",
+        "##er"
+      ],
+      [
+        "f",
+        "##ocu"
+      ],
+      [
+        "g",
+        "##re"
+      ],
+      [
+        "g",
+        "##at"
+      ],
+      [
+        "g",
+        "##as"
+      ],
+      [
+        "h",
+        "##a"
+      ],
+      [
+        "h",
+        "##id"
+      ],
+      [
+        "i",
+        "##ll"
+      ],
+      [
+        "j",
+        "##ew"
+      ],
+      [
+        "l",
+        "##ock"
+      ],
+      [
+        "m",
+        "##or"
+      ],
+      [
+        "m",
+        "##al"
+      ],
+      [
+        "m",
+        "##edi"
+      ],
+      [
+        "n",
+        "##o"
+      ],
+      [
+        "p",
+        "##ie"
+      ],
+      [
+        "p",
+        "##rin"
+      ],
+      [
+        "s",
+        "##w"
+      ],
+      [
+        "s",
+        "##im"
+      ],
+      [
+        "s",
+        "##ec"
+      ],
+      [
+        "s",
+        "##id"
+      ],
+      [
+        "t",
+        "##ar"
+      ],
+      [
+        "t",
+        "##od"
+      ],
+      [
+        "t",
+        "##ag"
+      ],
+      [
+        "u",
+        "##t"
+      ],
+      [
+        "w",
+        "##ed"
+      ],
+      [
+        "w",
+        "##ou"
+      ],
+      [
+        "##o",
+        "##o"
+      ],
+      [
+        "##o",
+        "##pment"
+      ],
+      [
+        "##n",
+        "##ed"
+      ],
+      [
+        "##n",
+        "##ess"
+      ],
+      [
+        "##t",
+        "##e"
+      ],
+      [
+        "##t",
+        "##ur"
+      ],
+      [
+        "##t",
+        "##ed"
+      ],
+      [
+        "##r",
+        "##ation"
+      ],
+      [
+        "##r",
+        "##aint"
+      ],
+      [
+        "##r",
+        "##ub"
+      ],
+      [
+        "##l",
+        "##a"
+      ],
+      [
+        "##l",
+        "##in"
+      ],
+      [
+        "##l",
+        "##du"
+      ],
+      [
+        "##i",
+        "##b"
+      ],
+      [
+        "##i",
+        "##re"
+      ],
+      [
+        "##i",
+        "##form"
+      ],
+      [
+        "##s",
+        "##h"
+      ],
+      [
+        "##s",
+        "##on"
+      ],
+      [
+        "##d",
+        "##s"
+      ],
+      [
+        "##d",
+        "##en"
+      ],
+      [
+        "##d",
+        "##ing"
+      ],
+      [
+        "##a",
+        "##re"
+      ],
+      [
+        "##g",
+        "##s"
+      ],
+      [
+        "##g",
+        "##ate"
+      ],
+      [
+        "##g",
+        "##la"
+      ],
+      [
+        "##f",
+        "##act"
+      ],
+      [
+        "##f",
+        "##ied"
+      ],
+      [
+        "##f",
+        "##unction"
+      ],
+      [
+        "##p",
+        "##t"
+      ],
+      [
+        "##p",
+        "##ar"
+      ],
+      [
+        "##p",
+        "##art"
+      ],
+      [
+        "##p",
+        "##les"
+      ],
+      [
+        "##m",
+        "##e"
+      ],
+      [
+        "##m",
+        "##eters"
+      ],
+      [
+        "##y",
+        "##me"
+      ],
+      [
+        "##u",
+        "##ce"
+      ],
+      [
+        "##u",
+        "##ck"
+      ],
+      [
+        "##u",
+        "##fact"
+      ],
+      [
+        "##w",
+        "##er"
+      ],
+      [
+        "##w",
+        "##ned"
+      ],
+      [
+        "##c",
+        "##on"
+      ],
+      [
+        "##c",
+        "##ur"
+      ],
+      [
+        "##c",
+        "##are"
+      ],
+      [
+        "##b",
+        "##ri"
+      ],
+      [
+        "##ti",
+        "##gate"
+      ],
+      [
+        "##on",
+        "##ds"
+      ],
+      [
+        "##er",
+        "##sh"
+      ],
+      [
+        "##en",
+        "##ed"
+      ],
+      [
+        "##or",
+        "##ough"
+      ],
+      [
+        "##ro",
+        "##ts"
+      ],
+      [
+        "##nd",
+        "##s"
+      ],
+      [
+        "##ce",
+        "##st"
+      ],
+      [
+        "##al",
+        "##s"
+      ],
+      [
+        "co",
+        "##ver"
+      ],
+      [
+        "##st",
+        "##raint"
+      ],
+      [
+        "pro",
+        "##jection"
+      ],
+      [
+        "op",
+        "##ening"
+      ],
+      [
+        "##ci",
+        "##ples"
+      ],
+      [
+        "##an",
+        "##t"
+      ],
+      [
+        "re",
+        "##as"
+      ],
+      [
+        "re",
+        "##tur"
+      ],
+      [
+        "re",
+        "##straint"
+      ],
+      [
+        "st",
+        "##ric"
+      ],
+      [
+        "con",
+        "##cent"
+      ],
+      [
+        "con",
+        "##ne"
+      ],
+      [
+        "##le",
+        "##te"
+      ],
+      [
+        "##ri",
+        "##al"
+      ],
+      [
+        "##ction",
+        "##s"
+      ],
+      [
+        "in",
+        "##iti"
+      ],
+      [
+        "per",
+        "##son"
+      ],
+      [
+        "##es",
+        "##tigate"
+      ],
+      [
+        "##ur",
+        "##er"
+      ],
+      [
+        "comp",
+        "##lete"
+      ],
+      [
+        "compli",
+        "##ant"
+      ],
+      [
+        "##ain",
+        "##ing"
+      ],
+      [
+        "prot",
+        "##ective"
+      ],
+      [
+        "cal",
+        "##ib"
+      ],
+      [
+        "##ard",
+        "##s"
+      ],
+      [
+        "th",
+        "##yme"
+      ],
+      [
+        "th",
+        "##orough"
+      ],
+      [
+        "##el",
+        "##ry"
+      ],
+      [
+        "##pli",
+        "##es"
+      ],
+      [
+        "##as",
+        "##e"
+      ],
+      [
+        "lo",
+        "##os"
+      ],
+      [
+        "pl",
+        "##ain"
+      ],
+      [
+        "po",
+        "##wer"
+      ],
+      [
+        "inspe",
+        "##ct"
+      ],
+      [
+        "sc",
+        "##oo"
+      ],
+      [
+        "sc",
+        "##rub"
+      ],
+      [
+        "calculation",
+        "##s"
+      ],
+      [
+        "clean",
+        "##lin"
+      ],
+      [
+        "##ust",
+        "##rial"
+      ],
+      [
+        "sa",
+        "##uce"
+      ],
+      [
+        "inv",
+        "##estigate"
+      ],
+      [
+        "ch",
+        "##uck"
+      ],
+      [
+        "de",
+        "##vel"
+      ],
+      [
+        "de",
+        "##gla"
+      ],
+      [
+        "de",
+        "##part"
+      ],
+      [
+        "de",
+        "##bri"
+      ],
+      [
+        "##un",
+        "##ic"
+      ],
+      [
+        "fol",
+        "##d"
+      ],
+      [
+        "sup",
+        "##plies"
+      ],
+      [
+        "min",
+        "##im"
+      ],
+      [
+        "be",
+        "##gin"
+      ],
+      [
+        "par",
+        "##tic"
+      ],
+      [
+        "##ss",
+        "##ing"
+      ],
+      [
+        "man",
+        "##ufact"
+      ],
+      [
+        "le",
+        "##aves"
+      ],
+      [
+        "ste",
+        "##w"
+      ],
+      [
+        "##ic",
+        "##ated"
+      ],
+      [
+        "tim",
+        "##es"
+      ],
+      [
+        "sh",
+        "##ape"
+      ],
+      [
+        "allergen",
+        "##s"
+      ],
+      [
+        "40",
+        "##0"
+      ],
+      [
+        "di",
+        "##vi"
+      ],
+      [
+        "##ec",
+        "##ution"
+      ],
+      [
+        "devi",
+        "##ate"
+      ],
+      [
+        "measurement",
+        "##s"
+      ],
+      [
+        "season",
+        "##ings"
+      ],
+      [
+        "ad",
+        "##her"
+      ],
+      [
+        "dis",
+        "##con"
+      ],
+      [
+        "##itch",
+        "##ing"
+      ],
+      [
+        "cook",
+        "##ed"
+      ],
+      [
+        "br",
+        "##ing"
+      ],
+      [
+        "sal",
+        "##ad"
+      ],
+      [
+        "##rate",
+        "##d"
+      ],
+      [
+        "##rove",
+        "##d"
+      ],
+      [
+        "##fication",
+        "##s"
+      ],
+      [
+        "##se",
+        "##mb"
+      ],
+      [
+        "station",
+        "##s"
+      ],
+      [
+        "health",
+        "##care"
+      ],
+      [
+        "contain",
+        "##s"
+      ],
+      [
+        "##able",
+        "##s"
+      ],
+      [
+        "water",
+        "##pro"
+      ],
+      [
+        "##sion",
+        "##s"
+      ],
+      [
+        "pres",
+        "##ence"
+      ],
+      [
+        "container",
+        "##s"
+      ],
+      [
+        "un",
+        "##iform"
+      ],
+      [
+        "ex",
+        "##cur"
+      ],
+      [
+        "ex",
+        "##ecution"
+      ],
+      [
+        "hand",
+        "##ling"
+      ],
+      [
+        "proof",
+        "##ing"
+      ],
+      [
+        "cut",
+        "##s"
+      ],
+      [
+        "cut",
+        "##ting"
+      ],
+      [
+        "##ag",
+        "##es"
+      ],
+      [
+        "bo",
+        "##ards"
+      ],
+      [
+        "##ne",
+        "##ct"
+      ],
+      [
+        "gallon",
+        "##s"
+      ],
+      [
+        "bro",
+        "##wned"
+      ],
+      [
+        "ind",
+        "##ustrial"
+      ],
+      [
+        "mat",
+        "##ches"
+      ],
+      [
+        "ve",
+        "##get"
+      ],
+      [
+        "##mo",
+        "##meters"
+      ],
+      [
+        "int",
+        "##ensi"
+      ],
+      [
+        "permit",
+        "##ted"
+      ],
+      [
+        "ther",
+        "##mometers"
+      ],
+      [
+        "comm",
+        "##unic"
+      ],
+      [
+        "shif",
+        "##ts"
+      ],
+      [
+        "rapid",
+        "##ly"
+      ],
+      [
+        "unit",
+        "##s"
+      ],
+      [
+        "soft",
+        "##ened"
+      ],
+      [
+        "app",
+        "##roved"
+      ],
+      [
+        "14",
+        "##0"
+      ],
+      [
+        "19",
+        "##0"
+      ],
+      [
+        "rem",
+        "##aining"
+      ],
+      [
+        "onion",
+        "##s"
+      ],
+      [
+        "label",
+        "##s"
+      ],
+      [
+        "tomato",
+        "##es"
+      ],
+      [
+        "37",
+        "##5"
+      ],
+      [
+        "band",
+        "##ages"
+      ],
+      [
+        "se",
+        "##ar"
+      ],
+      [
+        "se",
+        "##par"
+      ],
+      [
+        "wor",
+        "##king"
+      ],
+      [
+        "wor",
+        "##cest"
+      ],
+      [
+        "##ensi",
+        "##ls"
+      ],
+      [
+        "proper",
+        "##ly"
+      ],
+      [
+        "speci",
+        "##fied"
+      ],
+      [
+        "speci",
+        "##fications"
+      ],
+      [
+        "exce",
+        "##ed"
+      ],
+      [
+        "exce",
+        "##pt"
+      ],
+      [
+        "ab",
+        "##ove"
+      ],
+      [
+        "bat",
+        "##ches"
+      ],
+      [
+        "bul",
+        "##k"
+      ],
+      [
+        "bui",
+        "##ldu"
+      ],
+      [
+        "bow",
+        "##l"
+      ],
+      [
+        "bak",
+        "##e"
+      ],
+      [
+        "car",
+        "##rots"
+      ],
+      [
+        "dre",
+        "##ssing"
+      ],
+      [
+        "ded",
+        "##icated"
+      ],
+      [
+        "eg",
+        "##gs"
+      ],
+      [
+        "fer",
+        "##ment"
+      ],
+      [
+        "focu",
+        "##s"
+      ],
+      [
+        "gre",
+        "##ase"
+      ],
+      [
+        "gat",
+        "##her"
+      ],
+      [
+        "ha",
+        "##ir"
+      ],
+      [
+        "hid",
+        "##den"
+      ],
+      [
+        "ill",
+        "##ness"
+      ],
+      [
+        "jew",
+        "##elry"
+      ],
+      [
+        "lock",
+        "##out"
+      ],
+      [
+        "mor",
+        "##ning"
+      ],
+      [
+        "mal",
+        "##function"
+      ],
+      [
+        "medi",
+        "##um"
+      ],
+      [
+        "pie",
+        "##ces"
+      ],
+      [
+        "prin",
+        "##ciples"
+      ],
+      [
+        "sw",
+        "##itching"
+      ],
+      [
+        "sim",
+        "##mer"
+      ],
+      [
+        "sec",
+        "##onds"
+      ],
+      [
+        "sid",
+        "##es"
+      ],
+      [
+        "tar",
+        "##get"
+      ],
+      [
+        "tod",
+        "##ay"
+      ],
+      [
+        "tag",
+        "##out"
+      ],
+      [
+        "ut",
+        "##ensils"
+      ],
+      [
+        "wed",
+        "##ding"
+      ],
+      [
+        "wou",
+        "##nds"
+      ],
+      [
+        "##ersh",
+        "##ire"
+      ],
+      [
+        "projection",
+        "##s"
+      ],
+      [
+        "reas",
+        "##semb"
+      ],
+      [
+        "retur",
+        "##ning"
+      ],
+      [
+        "stric",
+        "##t"
+      ],
+      [
+        "concent",
+        "##ration"
+      ],
+      [
+        "conne",
+        "##ctions"
+      ],
+      [
+        "initi",
+        "##als"
+      ],
+      [
+        "person",
+        "##al"
+      ],
+      [
+        "calib",
+        "##rated"
+      ],
+      [
+        "thorough",
+        "##ly"
+      ],
+      [
+        "loos",
+        "##e"
+      ],
+      [
+        "scoo",
+        "##ps"
+      ],
+      [
+        "cleanlin",
+        "##ess"
+      ],
+      [
+        "devel",
+        "##opment"
+      ],
+      [
+        "degla",
+        "##ze"
+      ],
+      [
+        "depart",
+        "##ment"
+      ],
+      [
+        "debri",
+        "##s"
+      ],
+      [
+        "minim",
+        "##um"
+      ],
+      [
+        "begin",
+        "##s"
+      ],
+      [
+        "partic",
+        "##les"
+      ],
+      [
+        "manufact",
+        "##urer"
+      ],
+      [
+        "divi",
+        "##de"
+      ],
+      [
+        "adher",
+        "##ence"
+      ],
+      [
+        "discon",
+        "##nect"
+      ],
+      [
+        "waterpro",
+        "##of"
+      ],
+      [
+        "excur",
+        "##sions"
+      ],
+      [
+        "veget",
+        "##ables"
+      ],
+      [
+        "intensi",
+        "##ve"
+      ],
+      [
+        "communic",
+        "##ate"
+      ],
+      [
+        "separ",
+        "##ate"
+      ],
+      [
+        "worcest",
+        "##ershire"
+      ],
+      [
+        "buildu",
+        "##p"
+      ],
+      [
+        "malfunction",
+        "##s"
+      ],
+      [
+        "reassemb",
+        "##le"
+      ]
+    ]
+  }
+}

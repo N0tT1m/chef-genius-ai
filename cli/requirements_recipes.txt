@@ -1,0 +1,23 @@
+# Requirements for Improved Recipe Generator System
+
+# Core dependencies
+torch>=2.0.0
+transformers>=4.30.0
+requests>=2.28.0
+tqdm>=4.65.0
+
+# Configuration and data
+pyyaml>=6.0
+dataclasses; python_version < '3.7'
+
+# Export functionality
+reportlab>=4.0.0  # For PDF export (optional)
+
+# Testing (optional)
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Development (optional)
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0

@@ -1,0 +1,111 @@
+
+services:
+  chef-genius-training:
+    build:
+      context: .
+      dockerfile: Dockerfile.training
+    container_name: chef-genius-training
+    restart: unless-stopped
+    
+    # GPU Configuration
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    
+    # Environment Variables
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+      - TORCH_CUDA_ARCH_LIST=12.0
+      - PYTHONUNBUFFERED=1
+      - WANDB_PROJECT=chef-genius-optimized
+      - WANDB_API_KEY=${WANDB_API_KEY:-4733cbc4502266939584cc50e0c915b1b915351f}
+      - DISCORD_WEBHOOK=${DISCORD_WEBHOOK:-https://discord.com/api/webhooks/1386109570283343953/uGkhj9dpuCg09SbKzZ0Tx2evugJrchQv-nrq3w0r_xi3w8si-XBpQJuxq_p_bcQlhB9W}
+      - ALERT_PHONE=${ALERT_PHONE:-+18125841533}
+      # Memory optimization settings for RTX 5090 (32GB VRAM, 48GB RAM)
+      - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True,max_split_size_mb:256,roundup_power2_divisions:16,garbage_collection_threshold:0.6
+    
+    # Volume Mounts - Adjust paths for Windows
+    volumes:
+      # Training scripts and code
+      - ./cli:/workspace/cli
+      - ./backend:/workspace/backend
+      - ./data:/workspace/data
+
+      # Rust acceleration components (for development/debugging)
+      - ./chef_genius_core:/workspace/chef_genius_core
+      - ./Cargo.toml:/workspace/Cargo.toml
+      - ./Cargo.lock:/workspace/Cargo.lock
+
+      # Models directory (persistent) - includes existing checkpoints
+      - ./models:/workspace/models
+      
+      # Specific checkpoint mapping for resuming training
+      - ./models/recipe_generation_flan-t5-large:/workspace/models/recipe_generation_flan-t5-large
+      
+      # Logs and checkpoints
+      - ./logs:/workspace/logs
+      - ./checkpoints:/workspace/checkpoints
+      
+      # Cache directories for faster training
+      - chef-genius-cache:/root/.cache
+      - chef-genius-wandb:/root/.local/share/wandb
+      
+      # Hugging Face cache for model downloads
+      - huggingface-cache:/root/.cache/huggingface
+    
+    # Memory and resource limits for RTX 5090 (32GB VRAM) with 48GB system RAM
+    shm_size: '16gb'  # Increased for larger batch sizes (batch_size=48)
+    mem_limit: 40g  # Increased to 40GB (you have 48GB total)
+    memswap_limit: 40g  # Match mem_limit for performance
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      stack:
+        soft: 134217728  # 128MB stack size
+        hard: 134217728
+    
+    # Network configuration
+    network_mode: bridge
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "python", "-c", "import torch; print(torch.cuda.is_available())"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    # Working directory
+    working_dir: /workspace
+
+  # Optional: Monitoring with TensorBoard
+  tensorboard:
+    image: tensorflow/tensorflow:latest
+    container_name: chef-genius-tensorboard
+    restart: unless-stopped
+    ports:
+      - "6006:6006"
+    volumes:
+      - ./logs:/logs
+    command: tensorboard --logdir=/logs --host=0.0.0.0 --port=6006
+    depends_on:
+      - chef-genius-training
+
+# Named volumes for persistence
+volumes:
+  chef-genius-cache:
+    driver: local
+  chef-genius-wandb:
+    driver: local
+  huggingface-cache:
+    driver: local
+
+# Networks
+networks:
+  default:
+    driver: bridge

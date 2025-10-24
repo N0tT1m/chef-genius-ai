@@ -1,0 +1,229 @@
+# Chef Genius MCP System Makefile
+
+.PHONY: help build up down logs clean test setup-dev migrate health check-services
+
+# Default target
+help:
+	@echo "Chef Genius MCP System Commands:"
+	@echo ""
+	@echo "  Development:"
+	@echo "    setup-dev     - Setup development environment"
+	@echo "    build         - Build all Docker images"
+	@echo "    up            - Start all services"
+	@echo "    down          - Stop all services"
+	@echo "    logs          - View logs from all services"
+	@echo "    health        - Check health of all services"
+	@echo ""
+	@echo "  Data Management:"
+	@echo "    migrate       - Run database migrations"
+	@echo "    seed-data     - Seed vector database with recipe data"
+	@echo "    backup        - Backup data volumes"
+	@echo "    restore       - Restore data from backup"
+	@echo ""
+	@echo "  Testing:"
+	@echo "    test          - Run all tests"
+	@echo "    test-mcp      - Test MCP servers"
+	@echo "    test-rag      - Test RAG system"
+	@echo "    benchmark     - Run performance benchmarks"
+	@echo ""
+	@echo "  Monitoring:"
+	@echo "    check-services - Check status of all services"
+	@echo "    monitor       - Open monitoring dashboard"
+	@echo "    clean         - Remove containers and volumes"
+
+# Development Environment Setup
+setup-dev:
+	@echo "Setting up Chef Genius development environment..."
+	python -m venv venv-mcp
+	. venv-mcp/bin/activate && pip install -r requirements.txt
+	. venv-mcp/bin/activate && pip install -r mcp_servers/requirements.txt
+	@echo "Development environment ready!"
+
+# Docker Operations
+build:
+	@echo "Building Chef Genius MCP system..."
+	docker-compose -f docker-compose.mcp-full.yml build --parallel
+
+up:
+	@echo "Starting Chef Genius MCP system..."
+	docker-compose -f docker-compose.mcp-full.yml up -d
+	@echo "System starting... Run 'make health' to check status."
+
+down:
+	@echo "Stopping Chef Genius MCP system..."
+	docker-compose -f docker-compose.mcp-full.yml down
+
+logs:
+	@echo "Viewing logs from all services..."
+	docker-compose -f docker-compose.mcp-full.yml logs -f
+
+logs-recipe:
+	@echo "Viewing Recipe Server logs..."
+	docker-compose -f docker-compose.mcp-full.yml logs -f recipe-server
+
+logs-knowledge:
+	@echo "Viewing Knowledge Server logs..."
+	docker-compose -f docker-compose.mcp-full.yml logs -f knowledge-server
+
+logs-tools:
+	@echo "Viewing Tool Server logs..."
+	docker-compose -f docker-compose.mcp-full.yml logs -f tool-server
+
+logs-backend:
+	@echo "Viewing Backend logs..."
+	docker-compose -f docker-compose.mcp-full.yml logs -f backend
+
+# Health Checks
+health:
+	@echo "Checking health of Chef Genius services..."
+	@echo ""
+	@echo "=== Core Infrastructure ==="
+	@docker-compose -f docker-compose.mcp-full.yml ps weaviate redis
+	@echo ""
+	@echo "=== MCP Servers ==="
+	@docker-compose -f docker-compose.mcp-full.yml ps recipe-server knowledge-server tool-server
+	@echo ""
+	@echo "=== Application Layer ==="
+	@docker-compose -f docker-compose.mcp-full.yml ps backend frontend
+	@echo ""
+	@echo "=== Monitoring ==="
+	@docker-compose -f docker-compose.mcp-full.yml ps prometheus grafana
+
+check-services:
+	@echo "Checking service endpoints..."
+	@echo "Weaviate: http://localhost:8080/v1/meta"
+	@curl -s http://localhost:8080/v1/meta | grep -o '"version":"[^"]*"' || echo "❌ Weaviate not ready"
+	@echo ""
+	@echo "Recipe Server: http://localhost:8001/health"
+	@curl -s http://localhost:8001/health | grep -o '"status":"[^"]*"' || echo "❌ Recipe Server not ready"
+	@echo ""
+	@echo "Knowledge Server: http://localhost:8002/health"
+	@curl -s http://localhost:8002/health | grep -o '"status":"[^"]*"' || echo "❌ Knowledge Server not ready"
+	@echo ""
+	@echo "Tool Server: http://localhost:8003/health"
+	@curl -s http://localhost:8003/health | grep -o '"status":"[^"]*"' || echo "❌ Tool Server not ready"
+	@echo ""
+	@echo "Backend API: http://localhost:8000/health"
+	@curl -s http://localhost:8000/health | grep -o '"status":"[^"]*"' || echo "❌ Backend not ready"
+
+# Data Management
+migrate:
+	@echo "Running database migrations..."
+	docker-compose -f docker-compose.mcp-full.yml exec backend python -m alembic upgrade head
+
+seed-data:
+	@echo "Seeding vector database with recipe data..."
+	docker-compose -f docker-compose.mcp-full.yml exec recipe-server python -c "
+import asyncio
+from backend.app.services.enhanced_rag_system import EnhancedRAGSystem
+async def seed():
+    rag = EnhancedRAGSystem()
+    await rag._migrate_existing_data()
+    print('✅ Recipe data seeded successfully')
+asyncio.run(seed())
+"
+
+backup:
+	@echo "Backing up data volumes..."
+	@mkdir -p backups
+	docker run --rm -v chef-genius_weaviate_data:/data -v $(PWD)/backups:/backup alpine tar czf /backup/weaviate-$(shell date +%Y%m%d-%H%M%S).tar.gz -C /data .
+	docker run --rm -v chef-genius_redis_data:/data -v $(PWD)/backups:/backup alpine tar czf /backup/redis-$(shell date +%Y%m%d-%H%M%S).tar.gz -C /data .
+	@echo "✅ Backup completed"
+
+restore:
+	@echo "Available backups:"
+	@ls -la backups/
+	@echo "To restore, run: docker run --rm -v chef-genius_weaviate_data:/data -v $(PWD)/backups:/backup alpine tar xzf /backup/BACKUP_FILE -C /data"
+
+# Testing
+test:
+	@echo "Running all tests..."
+	. venv-mcp/bin/activate && python -m pytest tests/ -v
+
+test-mcp:
+	@echo "Testing MCP servers..."
+	@echo "Testing Recipe Server..."
+	@curl -X POST http://localhost:8001/tools/generate_recipe \
+		-H "Content-Type: application/json" \
+		-d '{"ingredients": ["chicken", "rice"], "cuisine": "Asian"}' | jq .
+	@echo ""
+	@echo "Testing Knowledge Server..."
+	@curl -X POST http://localhost:8002/tools/search_recipes \
+		-H "Content-Type: application/json" \
+		-d '{"query": "chicken rice", "top_k": 3}' | jq .
+
+test-rag:
+	@echo "Testing Enhanced RAG system..."
+	docker-compose -f docker-compose.mcp-full.yml exec recipe-server python -c "
+import asyncio
+from backend.app.services.enhanced_rag_system import EnhancedRAGSystem
+async def test():
+    rag = EnhancedRAGSystem()
+    health = await rag.health_check()
+    print('RAG Health:', health)
+    results = await rag.hybrid_search('chicken recipe', top_k=3)
+    print('Search Results:', len(results))
+asyncio.run(test())
+"
+
+benchmark:
+	@echo "Running performance benchmarks..."
+	@echo "Recipe Generation Benchmark..."
+	@time for i in {1..10}; do \
+		curl -s -X POST http://localhost:8001/tools/generate_recipe \
+		-H "Content-Type: application/json" \
+		-d '{"ingredients": ["chicken", "rice"], "cuisine": "Asian"}' > /dev/null; \
+	done
+	@echo "✅ Benchmark completed"
+
+# Monitoring
+monitor:
+	@echo "Opening monitoring dashboard..."
+	@echo "Grafana: http://localhost:3001 (admin/admin123)"
+	@echo "Prometheus: http://localhost:9090"
+	@echo "Kibana: http://localhost:5601"
+	@echo "Weaviate Console: http://localhost:8080/v1/schema"
+
+# Cleanup
+clean:
+	@echo "Cleaning up Chef Genius system..."
+	docker-compose -f docker-compose.mcp-full.yml down -v
+	docker system prune -f
+	@echo "✅ Cleanup completed"
+
+clean-all: clean
+	@echo "Removing all images..."
+	docker rmi $(shell docker images -q chef-genius*)
+	@echo "✅ Full cleanup completed"
+
+# Development Shortcuts
+dev-up:
+	@echo "Starting development environment..."
+	docker-compose -f docker-compose.weaviate.yml up -d
+	@echo "✅ Development services ready"
+
+dev-down:
+	docker-compose -f docker-compose.weaviate.yml down
+
+# Production Deployment
+prod-deploy:
+	@echo "Deploying to production..."
+	@echo "⚠️  Make sure you have proper environment variables set!"
+	docker-compose -f docker-compose.mcp-full.yml -f docker-compose.prod.yml up -d
+	@echo "✅ Production deployment started"
+
+# Quick Start
+quick-start: build up
+	@echo "Chef Genius MCP system started!"
+	@echo ""
+	@echo "Services:"
+	@echo "  🍳 Frontend:          http://localhost:3000"
+	@echo "  🔧 Backend API:       http://localhost:8000"
+	@echo "  🤖 Recipe Server:     http://localhost:8001"
+	@echo "  🧠 Knowledge Server:  http://localhost:8002"
+	@echo "  🛠️  Tool Server:       http://localhost:8003"
+	@echo "  📊 Monitoring:        http://localhost:3001"
+	@echo ""
+	@echo "Run 'make health' to check service status"
+	@echo "Run 'make logs' to view logs"
+	@echo "Run 'make test-mcp' to test the system"
