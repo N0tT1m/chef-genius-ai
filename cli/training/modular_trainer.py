@@ -25,6 +25,7 @@ from training.callbacks import (
     TrainingState,
 )
 from training.lora_utils import LoRAManager
+from training.checkpoint_utils import CheckpointManager
 
 
 class ModularTrainer:
@@ -77,6 +78,8 @@ class ModularTrainer:
         self.scheduler: Optional[torch.optim.lr_scheduler.LRScheduler] = None
         self.global_step = 0
         self.start_time: Optional[float] = None
+        self.best_loss = float('inf')
+        self.epoch_losses: List[float] = []
 
         # Setup hardware optimizations
         self._setup_hardware()
@@ -237,8 +240,40 @@ class ModularTrainer:
                 lr_lambda=lambda step: 1.0,
             )
 
-    def train(self) -> None:
-        """Run training loop."""
+    def resume_from_checkpoint(self, checkpoint_path: str) -> None:
+        """
+        Resume training from a checkpoint.
+
+        Args:
+            checkpoint_path: Path to checkpoint directory
+        """
+        print(f"\n🔄 Resuming from checkpoint: {checkpoint_path}")
+
+        # Load checkpoint state (model, optimizer, scheduler, RNG states)
+        checkpoint_info = CheckpointManager.load_checkpoint(
+            checkpoint_dir=checkpoint_path,
+            model=self.model,
+            optimizer=self.optimizer,
+            scheduler=self.scheduler,
+            device=str(self.device)
+        )
+
+        # Restore training state
+        self.global_step = checkpoint_info.get('global_step', 0)
+        self.best_loss = checkpoint_info.get('best_loss', float('inf'))
+        self.epoch_losses = checkpoint_info.get('epoch_losses', [])
+
+        print(f"✅ Resumed from step {self.global_step}")
+        print(f"   Best loss: {self.best_loss:.4f}")
+        print(f"   RNG states restored: {checkpoint_info.get('has_rng_states', False)}")
+
+    def train(self, resume_checkpoint: Optional[str] = None) -> None:
+        """
+        Run training loop.
+
+        Args:
+            resume_checkpoint: Optional path to checkpoint to resume from
+        """
         print("\n🚀 Starting Training")
         self.config.print_summary()
 
@@ -263,11 +298,17 @@ class ModularTrainer:
         self.optimizer = self._create_optimizer()
         self.scheduler = self._create_scheduler(total_steps)
 
+        # Resume from checkpoint if provided
+        if resume_checkpoint:
+            self.resume_from_checkpoint(resume_checkpoint)
+
         print(f"\n📊 Training Plan:")
         print(f"   Total batches per epoch: {len(train_loader):,}")
         print(f"   Total training steps: {total_steps:,}")
         print(f"   Warmup steps: {self.config.optimization.warmup_steps:,}")
         print(f"   Validation batches: {len(val_loader):,}")
+        if resume_checkpoint:
+            print(f"   Resuming from step: {self.global_step:,}")
 
         # Training start callback
         self.callback_manager.on_train_begin(
@@ -366,6 +407,13 @@ class ModularTrainer:
 
         # Epoch end
         avg_loss = epoch_loss / batch_count if batch_count > 0 else 0.0
+        self.epoch_losses.append(avg_loss)
+
+        # Update best loss
+        if avg_loss < self.best_loss:
+            self.best_loss = avg_loss
+            print(f"   🎯 New best loss: {self.best_loss:.4f}")
+
         self.callback_manager.on_epoch_end(
             epoch=epoch,
             total_epochs=self.config.training.num_epochs,
@@ -431,21 +479,26 @@ class ModularTrainer:
         return metrics_dict
 
     def _save_checkpoint(self, step: int) -> None:
-        """Save model checkpoint."""
+        """Save complete model checkpoint with full training state."""
         checkpoint_dir = Path(self.config.output_dir) / f"checkpoint-{step}"
-        checkpoint_dir.mkdir(parents=True, exist_ok=True)
 
-        # Save model
-        if self.config.training.use_lora:
-            # Save LoRA adapters
-            self.model.save_pretrained(checkpoint_dir)
-        else:
-            # Save full model
-            self.model.save_pretrained(checkpoint_dir)
+        # Calculate current epoch from step
+        current_epoch = step // (len(self.data_manager.train_dataset) // self.config.training.batch_size)
 
-        self.tokenizer.save_pretrained(checkpoint_dir)
+        # Use CheckpointManager for complete state saving
+        CheckpointManager.save_checkpoint(
+            checkpoint_dir=str(checkpoint_dir),
+            model=self.model,
+            optimizer=self.optimizer,
+            scheduler=self.scheduler,
+            epoch=current_epoch,
+            global_step=step,
+            best_loss=self.best_loss,
+            epoch_losses=self.epoch_losses,
+            tokenizer=self.tokenizer
+        )
 
-        print(f"   💾 Checkpoint saved: {checkpoint_dir}")
+        print(f"   💾 Complete checkpoint saved: {checkpoint_dir}")
 
     def _finalize_training(self) -> None:
         """Finalize training and save final model."""

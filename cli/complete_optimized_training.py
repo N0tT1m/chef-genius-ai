@@ -24,9 +24,13 @@ from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
 from transformers import get_linear_schedule_with_warmup
 
-# Import your existing monitoring classes  
+# Import your existing monitoring classes
 from ryzen_4090_optimized_training import Ryzen4090OptimizedConfig
 # Note: Removed AllDatasetsTrainingIntegration - now using clean JSONL dataloader
+
+# Import checkpoint utilities for proper state management
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'training'))
+from checkpoint_utils import CheckpointManager
 
 # Import all monitoring dependencies 
 try:
@@ -831,53 +835,34 @@ class CompleteOptimizedTrainer:
         starting_step = 0
         starting_epoch = 0
         if resume_checkpoint:
-            training_state_path = f"{resume_checkpoint}/training_state.pt"
-            if os.path.exists(training_state_path):
-                print(f"📂 Loading training state from {training_state_path}")
-                try:
-                    training_state = torch.load(training_state_path, map_location='cpu')
+            print(f"📂 Resuming from checkpoint: {resume_checkpoint}")
+            try:
+                # Use CheckpointManager to load complete state including RNG
+                checkpoint_info = CheckpointManager.load_checkpoint(
+                    checkpoint_dir=resume_checkpoint,
+                    model=self.model,
+                    optimizer=optimizer,
+                    scheduler=scheduler,
+                    device='cuda' if torch.cuda.is_available() else 'cpu'
+                )
 
-                    # Restore step and epoch counters first
-                    starting_step = training_state.get('global_step', 0)
-                    starting_epoch = training_state.get('epoch', 0)
-                    self.epoch_losses = training_state.get('epoch_losses', [])
-                    best_loss = training_state.get('best_loss', float('inf'))
+                # Restore training state
+                starting_step = checkpoint_info.get('global_step', 0)
+                starting_epoch = checkpoint_info.get('epoch', 0)
+                self.epoch_losses = checkpoint_info.get('epoch_losses', [])
+                best_loss = checkpoint_info.get('best_loss', float('inf'))
 
-                    # Restore optimizer and scheduler state if they exist and are not empty
-                    optimizer_state = training_state.get('optimizer_state_dict')
-                    scheduler_state = training_state.get('scheduler_state_dict')
+                print(f"✅ Resumed from step {starting_step}, epoch {starting_epoch}")
+                if best_loss != float('inf'):
+                    print(f"   Previous best loss: {best_loss:.4f}")
+                print(f"   RNG states restored: {checkpoint_info.get('has_rng_states', False)}")
+                print(f"   Optimizer state restored: {checkpoint_info.get('has_optimizer_state', False)}")
+                print(f"   Scheduler state restored: {checkpoint_info.get('has_scheduler_state', False)}")
 
-                    if optimizer_state and isinstance(optimizer_state, dict) and len(optimizer_state) > 0:
-                        try:
-                            optimizer.load_state_dict(optimizer_state)
-                            print(f"  ✅ Restored optimizer state")
-                        except Exception as e:
-                            print(f"  ⚠️  Could not restore optimizer state: {e}")
-                            print(f"     Optimizer will restart from scratch")
-                    else:
-                        print(f"  ⚠️  Optimizer state is empty or missing - starting fresh")
-
-                    if scheduler_state and isinstance(scheduler_state, dict) and len(scheduler_state) > 0:
-                        try:
-                            scheduler.load_state_dict(scheduler_state)
-                            print(f"  ✅ Restored scheduler state")
-                        except Exception as e:
-                            print(f"  ⚠️  Could not restore scheduler state: {e}")
-                            print(f"     Scheduler will restart from scratch")
-                    else:
-                        print(f"  ⚠️  Scheduler state is empty or missing - starting fresh")
-
-                    print(f"✅ Resumed from step {starting_step}, epoch {starting_epoch}")
-                    if best_loss != float('inf'):
-                        print(f"   Previous best loss: {best_loss:.4f}")
-
-                except Exception as e:
-                    print(f"❌ Error loading training state: {e}")
-                    print(f"   Starting from scratch with model weights from checkpoint")
-                    traceback.print_exc()
-                    best_loss = float('inf')
-            else:
-                print(f"⚠️  Training state not found at {training_state_path}, starting from scratch")
+            except Exception as e:
+                print(f"❌ Error loading checkpoint: {e}")
+                print(f"   Starting from scratch")
+                traceback.print_exc()
                 best_loss = float('inf')
         else:
             best_loss = float('inf')
@@ -1241,57 +1226,29 @@ class CompleteOptimizedTrainer:
             self.model.train()  # Return to training mode
     
     def save_checkpoint(self, step, optimizer=None, scheduler=None, epoch=None):
-        """Save training checkpoint with full training state."""
+        """Save training checkpoint with full training state including RNG states."""
         checkpoint_dir = f"{self.output_dir}/checkpoint-{step}"
-        os.makedirs(checkpoint_dir, exist_ok=True)
 
-        # Save model and tokenizer
         try:
-            # Handle torch.compile() wrapped models - need to access ._orig_mod
-            model_to_save = self.model
-            if hasattr(self.model, '_orig_mod'):
-                print(f"  📦 Unwrapping torch.compile() model...")
-                model_to_save = self.model._orig_mod
+            # Use CheckpointManager to save complete state including RNG
+            CheckpointManager.save_checkpoint(
+                checkpoint_dir=checkpoint_dir,
+                model=self.model,
+                optimizer=optimizer,
+                scheduler=scheduler,
+                epoch=epoch if epoch is not None else self.current_epoch,
+                global_step=step,
+                best_loss=getattr(self, 'best_loss', float('inf')),
+                epoch_losses=self.epoch_losses,
+                tokenizer=self.tokenizer
+            )
 
-            model_to_save.save_pretrained(checkpoint_dir)
-            self.tokenizer.save_pretrained(checkpoint_dir)
-            print(f"💾 Saved model and tokenizer to {checkpoint_dir}")
+            print(f"💾 Complete checkpoint saved: {checkpoint_dir}")
+
         except Exception as e:
-            print(f"❌ Error saving model/tokenizer: {e}")
+            print(f"❌ Error saving checkpoint: {e}")
             traceback.print_exc()
-            raise
-
-        # Save training state (optimizer, scheduler, step count, epoch)
-        if optimizer is not None and scheduler is not None:
-            try:
-                training_state = {
-                    'global_step': step,
-                    'epoch': epoch if epoch is not None else self.current_epoch,
-                    'optimizer_state_dict': optimizer.state_dict(),
-                    'scheduler_state_dict': scheduler.state_dict(),
-                    'epoch_losses': self.epoch_losses,
-                    'best_loss': getattr(self, 'best_loss', float('inf'))
-                }
-
-                training_state_path = f"{checkpoint_dir}/training_state.pt"
-                print(f"  💾 Saving training state to {training_state_path}...")
-                torch.save(training_state, training_state_path)
-
-                # Verify the file was actually written
-                if os.path.exists(training_state_path):
-                    file_size = os.path.getsize(training_state_path)
-                    print(f"✅ Saved training state: step {step}, epoch {epoch} ({file_size:,} bytes)")
-                else:
-                    print(f"❌ WARNING: training_state.pt was not created at {training_state_path}")
-                    raise RuntimeError(f"Failed to create training_state.pt")
-
-            except Exception as e:
-                print(f"❌ Error saving training state: {e}")
-                traceback.print_exc()
-                # Don't raise - allow training to continue even if state save fails
-                print(f"⚠️  Training will continue, but resume may not work properly")
-        else:
-            print(f"⚠️  Optimizer or scheduler is None - skipping training state save")
+            print(f"⚠️  Training will continue, but resume may not work properly")
 
         return checkpoint_dir  # Return path for best model tracking
 

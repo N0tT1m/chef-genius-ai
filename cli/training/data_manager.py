@@ -183,10 +183,12 @@ class DataManager:
     def __init__(
         self,
         tokenizer: PreTrainedTokenizer,
-        config: DataConfig
+        config: DataConfig,
+        seed: int = 42
     ):
         self.tokenizer = tokenizer
         self.config = config
+        self.seed = seed
 
         # Ensure pad token is set
         if self.tokenizer.pad_token is None:
@@ -262,7 +264,7 @@ class DataManager:
         return [str(f) for f in files if f.is_file()]
 
     def _create_splits(self) -> None:
-        """Create train/val splits from full dataset."""
+        """Create deterministic train/val splits from full dataset."""
         if self.full_dataset is None:
             raise ValueError("Dataset not loaded. Call load_datasets() first.")
 
@@ -272,8 +274,12 @@ class DataManager:
 
         # Create indices
         indices = list(range(total_size))
+
         if self.config.shuffle:
-            random.shuffle(indices)
+            # Use deterministic shuffle with seed for reproducibility
+            rng = random.Random(self.seed)
+            rng.shuffle(indices)
+            print(f"   🎲 Deterministic shuffle with seed={self.seed}")
 
         train_indices = indices[:train_size]
         val_indices = indices[train_size:]
@@ -290,7 +296,7 @@ class DataManager:
             train_split_ratio=self.config.train_split
         )
 
-        print(f"✅ Created train/val split: {train_size:,} / {val_size:,}")
+        print(f"✅ Created deterministic train/val split: {train_size:,} / {val_size:,}")
 
     def _collate_fn(self, batch: List[Dict[str, torch.Tensor]]) -> Dict[str, torch.Tensor]:
         """Custom collate function for FLAN-T5 format."""
