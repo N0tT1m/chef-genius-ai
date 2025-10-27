@@ -20,6 +20,7 @@ class TrainingState:
     loss: float
     learning_rate: float
     metrics: Optional[Dict[str, float]] = None
+    fractional_epoch: Optional[float] = None  # Accurate epoch with fractional part
 
 
 class Callback(ABC):
@@ -253,10 +254,13 @@ class WandBCallback(BaseCallback):
         if not self.use_wandb or not self.wandb:
             return
 
+        # Use fractional_epoch if available, otherwise fall back to integer epoch
+        epoch_value = state.fractional_epoch if state.fractional_epoch is not None else state.epoch
+
         log_dict = {
             'train/loss': state.loss,
             'train/learning_rate': state.learning_rate,
-            'train/epoch': state.epoch,
+            'train/epoch': epoch_value,
         }
 
         if state.metrics:

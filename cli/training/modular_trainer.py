@@ -77,6 +77,7 @@ class ModularTrainer:
         self.optimizer: Optional[torch.optim.Optimizer] = None
         self.scheduler: Optional[torch.optim.lr_scheduler.LRScheduler] = None
         self.global_step = 0
+        self.current_epoch = 0  # Track current epoch for proper resumption
         self.start_time: Optional[float] = None
         self.best_loss = float('inf')
         self.epoch_losses: List[float] = []
@@ -260,10 +261,11 @@ class ModularTrainer:
 
         # Restore training state
         self.global_step = checkpoint_info.get('global_step', 0)
+        self.current_epoch = checkpoint_info.get('epoch', 0)
         self.best_loss = checkpoint_info.get('best_loss', float('inf'))
         self.epoch_losses = checkpoint_info.get('epoch_losses', [])
 
-        print(f"✅ Resumed from step {self.global_step}")
+        print(f"✅ Resumed from step {self.global_step}, epoch {self.current_epoch}")
         print(f"   Best loss: {self.best_loss:.4f}")
         print(f"   RNG states restored: {checkpoint_info.get('has_rng_states', False)}")
 
@@ -325,7 +327,10 @@ class ModularTrainer:
 
         # Training loop
         try:
-            for epoch in range(self.config.training.num_epochs):
+            # Start from current_epoch if resuming, otherwise from 0
+            start_epoch = self.current_epoch
+            for epoch in range(start_epoch, self.config.training.num_epochs):
+                self.current_epoch = epoch
                 self._train_epoch(epoch + 1, train_loader)
 
                 # Validation
@@ -354,7 +359,22 @@ class ModularTrainer:
         batch_count = 0
         self.optimizer.zero_grad()
 
+        # Calculate batches per epoch for proper resumption
+        batches_per_epoch = len(train_loader)
+
+        # When resuming, calculate which batch to start from based on global_step
+        # epoch is 1-indexed in this function, current_epoch is 0-indexed
+        steps_before_this_epoch = self.current_epoch * (batches_per_epoch // self.config.training.gradient_accumulation_steps)
+        steps_in_this_epoch = max(0, self.global_step - steps_before_this_epoch)
+        start_batch = steps_in_this_epoch * self.config.training.gradient_accumulation_steps
+
+        if start_batch > 0:
+            print(f"   📍 Resuming from batch {start_batch}/{batches_per_epoch} in epoch {epoch}")
+
         for batch_idx, batch in enumerate(train_loader):
+            # Skip already-processed batches when resuming
+            if batch_idx < start_batch:
+                continue
             # Move batch to device
             batch = {k: v.to(self.device, non_blocking=True) if hasattr(v, 'to') else v
                      for k, v in batch.items()}
@@ -390,6 +410,10 @@ class ModularTrainer:
                     torch.cuda.empty_cache()
 
             # Batch end callback
+            # Calculate fractional epoch based on global_step
+            steps_per_epoch = batches_per_epoch / self.config.training.gradient_accumulation_steps
+            fractional_epoch = self.global_step / steps_per_epoch if steps_per_epoch > 0 else 0.0
+
             state = TrainingState(
                 epoch=epoch,
                 global_step=self.global_step,
@@ -397,6 +421,7 @@ class ModularTrainer:
                 total_batches=len(train_loader),
                 loss=epoch_loss / batch_count,
                 learning_rate=self.optimizer.param_groups[0]['lr'],
+                fractional_epoch=fractional_epoch,
             )
             self.callback_manager.on_batch_end(state)
 
@@ -482,16 +507,14 @@ class ModularTrainer:
         """Save complete model checkpoint with full training state."""
         checkpoint_dir = Path(self.config.output_dir) / f"checkpoint-{step}"
 
-        # Calculate current epoch from step
-        current_epoch = step // (len(self.data_manager.train_dataset) // self.config.training.batch_size)
-
         # Use CheckpointManager for complete state saving
+        # Use self.current_epoch instead of calculating from steps
         CheckpointManager.save_checkpoint(
             checkpoint_dir=str(checkpoint_dir),
             model=self.model,
             optimizer=self.optimizer,
             scheduler=self.scheduler,
-            epoch=current_epoch,
+            epoch=self.current_epoch,
             global_step=step,
             best_loss=self.best_loss,
             epoch_losses=self.epoch_losses,
